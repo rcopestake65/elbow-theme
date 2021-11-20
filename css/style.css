@@ -1,0 +1,433 @@
+/*
+///////////////////////////////RESET\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*
+//////////////////////TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+p {
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #2c2e35;
+}
+
+a {
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:hover {
+  color: #ff301a;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+/*gradient text*/
+.gradient-text {
+  background-image: linear-gradient(90deg, red, yellow);
+  background-clip: text;
+  color: transparent;
+}
+
+/*
+//////////////////////////////BODY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background: white;
+  color: #2c2e35;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/*
+///////////////////////////CONTAINER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+.container {
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
+.about .container {
+  background-image: url(../images/ribbons/about.svg), url(../images/wave.svg);
+  background-position: top -100px left 10px, bottom 0 left -40px;
+  background-repeat: no-repeat;
+  background-size: 110%;
+}
+
+/*remove background images on small screens*/
+@media only screen and (max-width: 1200px) {
+  .about .container {
+    background-size: 0, 110%;
+  }
+}
+/*shitf position of wave background svg on smaller screens so it sits on top of the footer section and not beneath it*/
+@media only screen and (max-width: 800px) {
+  .about .container {
+    background-position: top -100px left 10px, bottom 100px left -40px;
+  }
+}
+.inner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/*
+///////////////////////////HEADER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+header {
+  padding: 0 10px;
+}
+
+/*
+///////////////////////////NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+nav {
+  z-index: 200;
+}
+
+.menu,
+.sub-menu {
+  list-style-type: none;
+}
+
+.menu-item {
+  padding: 10px;
+}
+
+.menu-item:not(.button) a:hover,
+.menu-item a:hover::after {
+  color: #ff9029;
+}
+
+/* Mobile menu */
+.menu-container,
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-menu-items: center;
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 5px;
+  color: #2c2e35;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu li.sub-menu-item a {
+  padding: 15px;
+  font-weight: normal;
+}
+
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+
+.menu-item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.active .menu-item {
+  display: block;
+  opacity: 1;
+  animation: anim 0.5s ease-in-out;
+}
+
+/* sub-menu up from mobile screens */
+.section {
+  background-color: #ff9029;
+}
+
+.sub-menu {
+  transition: visibility 0s, opacity 0.5s linear;
+  z-index: 10;
+  min-width: 200px;
+}
+
+.sub-menu-active .sub-menu {
+  display: block;
+  opacity: 1;
+  animation: anim 0.5s ease-in-out;
+}
+
+@keyframes anim {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+.menu-item-has-children i {
+  font-size: 12px;
+}
+
+/* Desktop menu */
+@media all and (min-width: 1160px) {
+  .section {
+    background-color: transparent;
+  }
+
+  .menu {
+    align-menu-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+
+  .logo {
+    order: 0;
+    padding-left: 10px;
+    flex-grow: 1;
+  }
+
+  .menu-item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+
+  .sub-menu {
+    display: none;
+    background: #ff9029;
+  }
+
+  .sub-menu-active .sub-menu a:hover {
+    color: white;
+  }
+
+  .sub-menu-active .sub-menu {
+    display: block;
+    position: absolute;
+  }
+
+  .toggle {
+    display: none;
+  }
+}
+/*animated gif forced inline*/
+.logo img {
+  display: inline;
+}
+
+/*
+///////////////////////////FOOTER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+footer {
+  background-color: #ffcd05;
+}
+
+.wave {
+  display: none;
+}
+
+.footer-content {
+  background-color: #ffcd05;
+  min-height: 100px;
+  margin-top: -2px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.25fr 1fr;
+  grid-template-rows: 1fr auto;
+}
+
+.strapline {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-column: span 2/-1;
+  width: 70%;
+  justify-self: end;
+}
+
+/*circle images*/
+.about-circle-01 {
+  margin-left: -7%;
+  align-self: end;
+}
+
+.about-circle-02 {
+  margin-left: -30%;
+  align-self: end;
+  z-index: 10;
+}
+
+/*smaller screen to one column*/
+@media (max-width: 768px) {
+  .about .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .about .strapline {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-column: span 1/-1;
+    width: 80%;
+    justify-self: center;
+    padding-bottom: 1rem;
+  }
+
+  .about-circle-01 {
+    margin-left: 0;
+    align-self: center;
+  }
+
+  .about-circle-02 {
+    margin-left: 0;
+    align-self: center;
+  }
+}
+/*///////////////////Buttons\\\\\\\\\\\\\\\\\\\\\*/
+/*icons*/
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  align-items: center;
+  z-index: 10;
+  justify-content: space-between;
+}
+
+.icons-item {
+  padding: 10px 0;
+}
+
+.fa-facebook {
+  color: #4372b8;
+}
+
+.fa-instagram {
+  color: #da1b52;
+}
+
+.fa-twitter {
+  color: #5ea9dd;
+}
+
+/*# sourceMappingURL=style.css.map */

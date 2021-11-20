@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as *;
+/*
+//////////////////////TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+p {
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+  color: $black;
+}
+a {
+  text-decoration: none;
+  transition: 300ms;
+}
+
+a:hover {
+  color: $logo-red;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: $font-headings;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: $font-headings;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: $font-headings;
+  margin-bottom: 1rem;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: $font-headings;
+}
+/*gradient text*/
+.gradient-text {
+  background-image: linear-gradient(90deg, red, yellow);
+  background-clip: text;
+  color: transparent;
+}

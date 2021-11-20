@@ -1,0 +1,131 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+nav {
+  z-index: 200;
+}
+.menu,
+.sub-menu {
+  list-style-type: none;
+}
+
+.menu-item {
+  padding: 10px;
+}
+.menu-item:not(.button) a:hover,
+.menu-item a:hover::after {
+  color: $orange;
+}
+/* Mobile menu */
+.menu-container,
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-menu-items: center;
+  position: relative;
+}
+.menu li a {
+  display: block;
+  padding: 15px 5px;
+  color: $black;
+  font-weight: bold;
+  text-decoration: none;
+}
+.menu li.sub-menu-item a {
+  padding: 15px;
+  font-weight: normal;
+}
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+
+.menu-item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.active .menu-item {
+  display: block;
+  opacity: 1;
+  animation: anim 0.5s ease-in-out;
+}
+
+/* sub-menu up from mobile screens */
+.section {
+  background-color: $orange;
+}
+.sub-menu {
+  // display: none;
+  // opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  z-index: 10;
+
+  min-width: 200px;
+}
+.sub-menu-active .sub-menu {
+  display: block;
+  opacity: 1;
+  animation: anim 0.5s ease-in-out;
+}
+@keyframes anim {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+.menu-item-has-children i {
+  font-size: 12px;
+}
+
+/* Desktop menu */
+@media all and (min-width: 1160px) {
+  .section {
+    background-color: transparent;
+  }
+  .menu {
+    align-menu-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+  .logo {
+    order: 0;
+    padding-left: 10px;
+    flex-grow: 1;
+  }
+
+  .menu-item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .sub-menu {
+    display: none;
+    background: $orange;
+  }
+
+  .sub-menu-active .sub-menu a:hover {
+    color: $white;
+  }
+  .sub-menu-active .sub-menu {
+    display: block;
+    position: absolute;
+  }
+
+  .toggle {
+    display: none;
+  }
+}
+/*animated gif forced inline*/
+.logo img {
+  display: inline;
+}

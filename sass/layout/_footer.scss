@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////FOOTER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+footer {
+  background-color: $yellow;
+}
+.wave {
+  display: none;
+}
+.footer-content {
+  background-color: $yellow;
+  min-height: 100px;
+  margin-top: -2px;
+}

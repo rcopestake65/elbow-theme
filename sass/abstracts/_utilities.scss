@@ -1,0 +1,10 @@
+/*image hover effect*/
+
+.img-zoom {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.img-zoom:hover {
+    transform: rotate(5deg);
+}

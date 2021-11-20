@@ -1,0 +1,17 @@
+@use "abstracts/variables";
+
+@use "base/reset";
+@use "base/typography";
+
+@use "layout/body";
+@use "layout/container";
+@use "layout/header";
+@use "layout/navigation";
+@use "layout/footer";
+
+//@use "pages/home";
+@use "pages/about";
+//@use "pages/contact";
+//@use "pages/page404";
+
+@use "components/buttons";
