@@ -19,6 +19,8 @@ toggleBtn.addEventListener("click", function () {
   }
 });
 
+//const items = document.querySelectorAll(".menu-item");
+
 /*Add classes to .menu-item li*/
 const mainMenu = document.querySelector("#menu-main-navigation");
 const menuItem = mainMenu.children;
@@ -47,91 +49,99 @@ function replaceMobileClassName(item) {
 mobileMenuItemArr.forEach(replaceMobileClassName);
 
 //append font awsome icon after top level menu items on mobile
+
 const menuParentLink = document.querySelectorAll(
   ".mobile-menu-container .mobile-sub-menu"
 );
+//const location = document.querySelectorAll('.mobile-sub-menu');
 
 function insertBefore(el, referenceNode) {
   referenceNode.parentNode.insertBefore(el, referenceNode);
 }
 
-//***************************************************/
-//VERSION 2 of Mobile Dropdown
-//************************************************* */
-
-//add a link and font awsome icons as btn for opening and closing sub nav
 menuParentLink.forEach((item) => {
   const openBtn = document.createElement("a");
-  const iconPlus = document.createElement("i");
-  iconPlus.className = "fa fa-plus";
+  openBtn.setAttribute("data-button", "button");
+  const icon = document.createElement("i");
+  icon.className = "fa fa-plus";
   openBtn.className = "open";
-  openBtn.appendChild(iconPlus);
+  openBtn.appendChild(icon);
   insertBefore(openBtn, item);
-  const iconMinus = document.createElement("i");
-  iconMinus.className = "fa fa-minus";
-  iconMinus.classList.add("hide");
-  openBtn.appendChild(iconMinus);
+  //console.log(openBtn);
+
+  //item.insertBefore(openBtn, menuParentLink);
 });
 
-//open mobile sub nav
+// //open mobile sub nav
 const openBtns = document.querySelectorAll(".open");
 const mobileDropDown = document.querySelectorAll(".mobile-sub-menu");
 const menuSubItem = document.querySelectorAll(".menu-item-has-children");
-const iconOpen = document.querySelectorAll(".fa-plus");
-const iconClose = document.querySelectorAll(".fa-minus");
 
 //wrap ul.mobile-sub-menu in a div to give it zero height until clicked
 mobileDropDown.forEach((item) => {
   const el = document.createElement("div");
   el.classList.add("sub-menu-container");
   el.setAttribute("data-container", "container");
+
   item.parentNode.insertBefore(el, item);
   el.appendChild(item);
+  //console.log(el);
 });
+//***************************************************/
+//VERSION 2 of Mobile Dropdown
+//************************************************* */
+
+// mobileSubMenusContainer.forEach(function (item) {
+//   const mobileSubMenuContainerHeight = item.getBoundingClientRect().height;
+//   console.log(mobileSubMenuContainerHeight);
+// });
+// const mobileSubMenuContainerHeight =
+//   mobileSubMenuContainer.getBoundingClientRect().height;
+
+let subMenuHeightArr = [];
+let clickedMenuArr = [];
+let subMenuContHeightArr = [];
+let subMenuContainerHeight = 0;
 
 const mobileSubMenusContainer = document.querySelectorAll(
   ".sub-menu-container"
 );
-
 const contHeight = mobileSubMenusContainer.forEach(function (i) {
   i.style.height = 0;
 });
-
+function zero(i) {
+  return i <= 0;
+}
+function setZero(i) {
+  return (i = 0);
+}
 openBtns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     //get the sub menu next to the btn clicked
     const clickedMenu = e.currentTarget.nextSibling;
-    const clickedOpenIcon = e.currentTarget.children[0];
-    const clickedCloseIcon = e.currentTarget.children[1];
-    console.log(clickedOpenIcon);
-    //get the height of the ul.mobile-sub-menu
     const clickedMenuHeight =
-      clickedMenu.firstChild.getBoundingClientRect().height;
+      e.currentTarget.parentElement.children[2].firstChild.getBoundingClientRect()
+        .height;
+    console.log(clickedMenuHeight);
+    //clickedMenu.style.height = "0px";
     //get the height of the menu when sub menu items are closed as this will need to be added to the total menu size once they open
     const linksHeight = menu.getBoundingClientRect().height;
+    //get the height of the sub menu
+    const subMenusHeight = document.querySelectorAll(".mobile-sub-menu");
+    subMenusHeight.forEach(function (subMenu) {
+      let subMenuHeight = subMenu.getBoundingClientRect().height;
+      console.log(subMenuHeight);
+      // //create an array of the sub menus
+      // clickedMenuArr.push(subMenu);
+      // //create an array of the sub menu heights
+      // subMenuHeightArr.push(subMenuHeight);
+    });
 
     if (clickedMenu.style.height === "0px") {
-      mobileSubMenusContainer.forEach(function (i) {
-        i.style.height = "0px";
-      });
-      iconClose.forEach(function (i) {
-        i.classList.add("hide");
-      });
-      iconOpen.forEach(function (i) {
-        i.classList.remove("hide");
-      });
       clickedMenu.style.height = `${clickedMenuHeight}px`;
       mobileMenuContainer.style.height = `${linksHeight + clickedMenuHeight}px`;
-      //close other open sub navs
-
-      //swap open and close icons of the btn clicked
-      clickedOpenIcon.classList.add("hide");
-      clickedCloseIcon.classList.remove("hide");
     } else {
       clickedMenu.style.height = "0px";
-      mobileMenuContainer.style.height = `${linksHeight - clickedMenuHeight}px`;
-      clickedOpenIcon.classList.remove("hide");
-      clickedCloseIcon.classList.add("hide");
     }
   });
 });

@@ -1,24 +1,23 @@
 @use "../abstracts/variables" as *;
 /*///////////////////Buttons\\\\\\\\\\\\\\\\\\\\\*/
 /*icons*/
-.icons {
-    display: flex;
-    flex-direction: column;
-    align-self: end;
-    align-items: center;
-    z-index: 10;
-    justify-content: space-between;
-}
-.icons-item {
-    padding: 10px 0;
-}
-
-.fa-facebook {
-    color: #4372b8;
-}
-.fa-instagram {
-    color: #da1b52;
-}
-.fa-twitter {
-    color: #5ea9dd;
+button {
+    border: none;
+    padding: 0.5rem 1.15rem;
+    color: $clr-white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: $transition;
+    a {
+        color: $clr-white;
+    }
+    &:hover {
+        //opacity: 0.8;
+        //padding-right: 2rem;
+        -webkit-box-shadow: 5px 5px 0px -2px #ffffff;
+        box-shadow: 5px 5px 0px -2px #ffffff;
+        .fa-arrow-right {
+            transform: translateX(15px);
+        }
+    }
 }

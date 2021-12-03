@@ -5,33 +5,17 @@
 .container {
     padding: 0;
     margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
 }
-@media (max-width: $br-small) {
+@include below($br-small) {
     .container {
         width: 100%;
         padding: 0;
     }
 }
-.about .container {
-    background-image: url(../images/ribbons/about.svg), url(../images/wave.svg);
-    background-position: top -100px left 10px, bottom 0 left -40px;
-    background-repeat: no-repeat;
-    background-size: 110%;
-}
-/*remove background images on small screens*/
-@media only screen and (max-width: 1200px) {
-    .about .container {
-        background-size: 0, 110%;
-    }
-}
-/*shitf position of wave background svg on smaller screens so it sits on top of the footer section and not beneath it*/
-@media only screen and (max-width: 800px) {
-    .about .container {
-        background-position: top -100px left 10px, bottom 100px left -40px;
-    }
-}
 .inner-container {
-    max-width: 1400px;
+    max-width: 80rem;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 2rem;
 }

@@ -2,130 +2,163 @@
 /*
 ///////////////////////////NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
-nav {
-  z-index: 200;
-}
+
 .menu,
 .sub-menu {
   list-style-type: none;
 }
-
-.menu-item {
-  padding: 10px;
+/* Desktop menu and logo*/
+.menu-container {
+  display: flex;
+  justify-content: space-between;
 }
-.menu-item:not(.button) a:hover,
-.menu-item a:hover::after {
-  color: $orange;
+.menu-container > * {
+  align-self: center;
+  flex-grow: 1;
 }
-/* Mobile menu */
-.menu-container,
 .menu {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-menu-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+//menu item li is relative to control the absolute position of the sub menu li
+.menu-item {
   position: relative;
 }
+.menu-item:hover .sub-menu {
+  display: block;
+}
+.sub-menu a:hover {
+  color: $clr-white;
+}
+
 .menu li a {
   display: block;
-  padding: 15px 5px;
-  color: $black;
+  padding: 0 5px;
+  color: $clr-dark;
   font-weight: bold;
   text-decoration: none;
-}
-.menu li.sub-menu-item a {
-  padding: 15px;
-  font-weight: normal;
-}
-.toggle {
-  order: 1;
-  font-size: 20px;
+  &:hover {
+    color: $clr-orange;
+  }
 }
 
-.menu-item {
-  order: 3;
-  width: 100%;
-  text-align: center;
-  display: none;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-.active .menu-item {
-  display: block;
-  opacity: 1;
-  animation: anim 0.5s ease-in-out;
-}
-
-/* sub-menu up from mobile screens */
-.section {
-  background-color: $orange;
-}
 .sub-menu {
-  // display: none;
-  // opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-  z-index: 10;
-
-  min-width: 200px;
-}
-.sub-menu-active .sub-menu {
-  display: block;
-  opacity: 1;
-  animation: anim 0.5s ease-in-out;
-}
-@keyframes anim {
-  0% {
-    display: none;
-    opacity: 0;
+  //display: none;
+  height: auto;
+  overflow: hidden;
+  background: $clr-orange;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  border-radius: 3px;
+  white-space: nowrap;
+  border-left: 2px solid $clr-orange-dark;
+  li {
+    transition: all 0.2s ease;
   }
-  100% {
+  li a {
+    font-size: $fs-14;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: $clr-white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.2 ease;
+    &:hover {
+      color: $clr-dark;
+    }
+  }
+  li:hover {
+    background-color: $clr-orange-dark;
+  }
+}
+.toggle-btn-container {
+  display: none;
+}
+
+// /* Mobile menu */
+.sub-menu-container {
+  height: 0;
+  overflow: hidden;
+  background-color: $clr-dark;
+  transition: all 1s ease;
+}
+.mobile-menu-container {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+.mobile-sub-menu {
+  margin-left: 0;
+  font-size: $fs-16;
+}
+
+@include below(1100px) {
+  .mobile-menu {
+    background-color: $clr-orange;
+    //padding: 1rem;
+    li.menu-item-has-children {
+      font-size: $fs-16;
+      position: relative;
+      li a {
+        font-size: $fs-14;
+      }
+      a:first-of-type {
+        display: block;
+        padding: 0.5rem 1rem;
+        margin-right: 42px;
+
+        &:hover {
+          background-color: $clr-orange-dark;
+        }
+      }
+      .open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        padding: 5px;
+        background-color: $clr-orange-dark;
+        cursor: pointer;
+      }
+    }
+    li li:hover {
+      background-color: $clr-orange-dark;
+    }
+    li a {
+      color: $clr-white;
+    }
+  }
+  .toggle-btn-container {
     display: block;
-    transition: opacity 0.5s ease-in-out;
   }
-}
-.menu-item-has-children i {
-  font-size: 12px;
-}
-
-/* Desktop menu */
-@media all and (min-width: 1160px) {
-  .section {
-    background-color: transparent;
+  .nav-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: $clr-orange;
+    transition: all 0.3s linear;
+    width: 50px;
   }
   .menu {
-    align-menu-items: flex-start;
-    flex-wrap: nowrap;
-    background: none;
-  }
-  .logo {
-    order: 0;
-    padding-left: 10px;
-    flex-grow: 1;
+    display: none;
   }
 
-  .menu-item {
-    order: 1;
-    position: relative;
-    display: block;
-    width: auto;
+  .menu {
+    flex-direction: column;
   }
   .sub-menu {
-    display: none;
-    background: $orange;
-  }
-
-  .sub-menu-active .sub-menu a:hover {
-    color: $white;
-  }
-  .sub-menu-active .sub-menu {
     display: block;
-    position: absolute;
   }
-
-  .toggle {
-    display: none;
-  }
-}
-/*animated gif forced inline*/
-.logo img {
-  display: inline;
 }

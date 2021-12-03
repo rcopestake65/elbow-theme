@@ -1,36 +1,8 @@
-/*=== Trigger  ===*/
-.animate {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+.img-zoom {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
 }
-/*=== strapline fade down ===*/
-.fadeInDownBig {
-    -webkit-animation-name: fadeInDownBig;
-    animation-name: fadeInDownBig;
-}
-@-webkit-keyframes fadeInDownBig {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -2000px, 0);
-        transform: translate3d(0, -2000px, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-@keyframes fadeInDownBig {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -2000px, 0);
-        transform: translate3d(0, -2000px, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
+
+.img-zoom:hover {
+    transform: scale(1.1);
 }
