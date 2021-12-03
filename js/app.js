@@ -73,7 +73,7 @@ menuParentLink.forEach((item) => {
   openBtn.appendChild(iconMinus);
 });
 
-//open mobile sub nav
+//variables
 const openBtns = document.querySelectorAll(".open");
 const mobileDropDown = document.querySelectorAll(".mobile-sub-menu");
 const menuSubItem = document.querySelectorAll(".menu-item-has-children");
@@ -98,19 +98,22 @@ const contHeight = mobileSubMenusContainer.forEach(function (i) {
 });
 
 openBtns.forEach(function (btn) {
+  //reset the overall menu container ".mobile-menu-container"
+  const linksHeight = menu.getBoundingClientRect().height;
+  mobileMenuContainer.style.height = `${linksHeight + 20}px`;
+  //click it boyo
   btn.addEventListener("click", function (e) {
     //get the sub menu next to the btn clicked
     const clickedMenu = e.currentTarget.nextSibling;
     const clickedOpenIcon = e.currentTarget.children[0];
     const clickedCloseIcon = e.currentTarget.children[1];
-    console.log(clickedOpenIcon);
     //get the height of the ul.mobile-sub-menu
     const clickedMenuHeight =
       clickedMenu.firstChild.getBoundingClientRect().height;
     //get the height of the menu when sub menu items are closed as this will need to be added to the total menu size once they open
-    const linksHeight = menu.getBoundingClientRect().height;
 
     if (clickedMenu.style.height === "0px") {
+      console.log(mobileMenuContainer.style.height);
       mobileSubMenusContainer.forEach(function (i) {
         i.style.height = "0px";
       });

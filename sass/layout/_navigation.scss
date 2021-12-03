@@ -88,12 +88,12 @@
   height: 0;
   overflow: hidden;
   background-color: $clr-dark;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 .mobile-menu-container {
   height: 0;
   overflow: hidden;
-  transition: all 0.3s linear;
+  transition: all 0.5s linear;
 }
 .mobile-sub-menu {
   margin-left: 0;
