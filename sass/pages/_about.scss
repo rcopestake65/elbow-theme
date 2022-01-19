@@ -1,50 +1,29 @@
-.about-grid {
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////ABOUT PAGE \\\\\\\\\\\\\\\*/
+
+.page-about .intro p {
+    font-size: $fs-18;
+    @include below(800px) {
+        font-size: $fs-16;
+    }
+}
+
+.text-img {
     display: grid;
-    grid-template-columns: 2fr 1.25fr 1fr;
-    grid-template-rows: 1fr auto;
-}
-.strapline {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-column: span 2/-1;
-    width: 70%;
-    justify-self: end;
-    z-index: -1;
-}
-
-/*circle images*/
-.about-circle-01 {
-    margin-left: -7%;
-    align-self: end;
-}
-.about-circle-02 {
-    margin-left: -30%;
-    align-self: end;
-    z-index: 10;
-}
-
-/*smaller screen to one column*/
-@media (max-width: 768px) {
-    .about {
-        .about-grid {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    @include below(600px) {
+        grid-template-columns: 1fr;
+    }
+    div + div {
+        max-width: 70%;
+        justify-self: end;
+        align-self: start;
+        @include below(1100px) {
+            max-width: 90%;
         }
-        .strapline {
-            grid-column-start: 1;
-            grid-column-end: -1;
-            grid-column: span 1/-1;
-            width: 80%;
+        @include below(600px) {
             justify-self: center;
-            padding-bottom: 1rem;
         }
-    }
-    .about-circle-01 {
-        margin-left: 0;
-        align-self: center;
-    }
-    .about-circle-02 {
-        margin-left: 0;
-        align-self: center;
     }
 }

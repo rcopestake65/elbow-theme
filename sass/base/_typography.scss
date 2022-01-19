@@ -4,16 +4,10 @@
 */
 p {
   padding-bottom: 1rem;
-  font-size: 1.2rem;
-  color: $clr-dark;
 }
 a {
   text-decoration: none;
   transition: 300ms;
-}
-
-a:hover {
-  color: $clr-red;
 }
 
 ul {
@@ -31,10 +25,4 @@ h6 {
   font-weight: normal;
   padding: 0;
   margin: 0;
-}
-/*gradient text*/
-.gradient-text {
-  background-image: linear-gradient(90deg, red, yellow);
-  background-clip: text;
-  color: transparent;
 }

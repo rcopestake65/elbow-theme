@@ -7,158 +7,129 @@
 .sub-menu {
   list-style-type: none;
 }
-/* Desktop menu and logo*/
-.menu-container {
-  display: flex;
-  justify-content: space-between;
+
+@include above(1100px) {
+  .menu-container {
+    margin-top: -3rem;
+  }
 }
+
 .menu-container > * {
   align-self: center;
   flex-grow: 1;
 }
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+.logo-gif {
+  margin-top: -1.2rem;
 }
 
 //menu item li is relative to control the absolute position of the sub menu li
-.menu-item {
-  position: relative;
+@include above(1100px) {
+  .menu-item {
+    position: relative;
+    padding-right: 1rem;
+  }
+  .my-menu-item-5 {
+    padding-right: 0;
+  }
 }
+
 .menu-item:hover .sub-menu {
   display: block;
-}
-.sub-menu a:hover {
-  color: $clr-white;
 }
 
 .menu li a {
   display: block;
   padding: 0 5px;
-  color: $clr-dark;
-  font-weight: bold;
   text-decoration: none;
-  &:hover {
-    color: $clr-orange;
-  }
 }
-
+.menu .my-menu-item-4 a:first-of-type {
+  padding-right: 0;
+}
 .sub-menu {
   //display: none;
   height: auto;
   overflow: hidden;
-  background: $clr-orange;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: auto;
   border-radius: 3px;
   white-space: nowrap;
-  border-left: 2px solid $clr-orange-dark;
+  z-index: 100;
   li {
     transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
   }
   li a {
     font-size: $fs-14;
     font-weight: normal;
     letter-spacing: 1px;
-    color: $clr-white;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
+
     transition: all 0.2 ease;
-    &:hover {
-      color: $clr-dark;
+
+    .toggle-btn-container {
+      display: none;
     }
-  }
-  li:hover {
-    background-color: $clr-orange-dark;
-  }
-}
-.toggle-btn-container {
-  display: none;
-}
 
-// /* Mobile menu */
-.sub-menu-container {
-  height: 0;
-  overflow: hidden;
-  background-color: $clr-dark;
-  transition: all 0.5s ease;
-}
-.mobile-menu-container {
-  height: 0;
-  overflow: hidden;
-  transition: all 0.5s linear;
-}
-.mobile-sub-menu {
-  margin-left: 0;
-  font-size: $fs-16;
-}
-
-@include below(1100px) {
-  .mobile-menu {
-    background-color: $clr-orange;
-    //padding: 1rem;
-    li.menu-item-has-children {
+    // /* Mobile menu */
+    .sub-menu-container {
+      height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+    .mobile-menu-container {
+      height: 0px;
+      overflow: hidden;
+      transition: all 0.5s linear;
+    }
+    .mobile-sub-menu {
+      margin-left: 0;
       font-size: $fs-16;
-      position: relative;
-      li a {
-        font-size: $fs-14;
-      }
-      a:first-of-type {
-        display: block;
-        padding: 0.5rem 1rem;
-        margin-right: 42px;
+    }
 
-        &:hover {
-          background-color: $clr-orange-dark;
+    @include below(1100px) {
+      .mobile-menu {
+        font-size: $fs-16;
+        position: relative;
+        li a {
+          font-size: $fs-14;
+        }
+        a:first-of-type {
+          display: block;
+          padding: 0.5rem 1rem;
+          margin-right: 42px;
         }
       }
-      .open {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+
+      .toggle-btn-container {
+        display: block;
+      }
+      .nav-toggle {
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 40px;
-        width: 40px;
-        padding: 5px;
-        background-color: $clr-orange-dark;
-        cursor: pointer;
+        top: 1rem;
+        right: 1rem;
+        transition: all 0.3s linear;
+        width: 50px;
+      }
+      .menu {
+        display: none;
+      }
+
+      .menu {
+        flex-direction: column;
+      }
+      .sub-menu {
+        display: block;
       }
     }
-    li li:hover {
-      background-color: $clr-orange-dark;
-    }
-    li a {
-      color: $clr-white;
-    }
-  }
-  .toggle-btn-container {
-    display: block;
-  }
-  .nav-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: $clr-orange;
-    transition: all 0.3s linear;
-    width: 50px;
-  }
-  .menu {
-    display: none;
-  }
-
-  .menu {
-    flex-direction: column;
-  }
-  .sub-menu {
-    display: block;
   }
 }

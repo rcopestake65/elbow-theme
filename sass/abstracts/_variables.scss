@@ -3,20 +3,17 @@ $clr-white: hsl(0, 0%, 100%);
 $clr-gray: hsl(0, 0%, 54%);
 $clr-black: hsl(0, 0%, 0%);
 $clr-dark: hsl(0, 0%, 13%);
+$clr-white-transparent: hsla(360, 100%, 100%, 0.3);
+$clr-black-transparent: hsla(0, 0%, 0%, 0.18);
 
 //branding colors
-$clr-red: hsl(6, 100%, 55%);
-$clr-dark: hsl(227, 9%, 19%);
-$clr-yellow: hsl(48, 100%, 51%);
-$clr-orange: hsl(29, 100%, 58%);
 
-//branding colors hover & other variants
-$clr-orange-dark: hsl(29, 100%, 48%);
-$clr-orange-darker: hsl(29, 100%, 28%);
+//branding color variants
 
 //fonts
-$font-stack: "Open Sans", sans-serif;
-$font-headings: "Open Sans", sans-serif;
+$font-stack: "Poppins", sans-serif;
+$font-handwritten: "Caveat", cursive;
+$font-headings: "Poppins", sans-serif;
 $font-size-base: 1rem;
 
 //font-sizes
@@ -27,7 +24,9 @@ $fs-20: 1.25rem;
 $fs-22: 1.375rem;
 $fs-24: 1.5rem;
 $fs-30: 1.875rem;
+$fs-32: 2rem;
 $fs-36: 2.25rem;
+$fs-48: 3rem;
 $fs-60: 3.75rem;
 $fs-85: 5.313rem;
 

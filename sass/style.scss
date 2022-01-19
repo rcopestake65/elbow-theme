@@ -6,15 +6,12 @@
 @use "base/typography";
 
 @use "layout/body";
-@use "layout/container";
+@use "layout/containers";
 @use "layout/header";
 @use "layout/navigation";
 @use "layout/footer";
-@use "layout/bg_images";
 
 @use "pages/home";
-//@use "pages/about";
-//@use "pages/contact";
-//@use "pages/page404";
+@use "pages/about";
 
 @use "components/buttons";

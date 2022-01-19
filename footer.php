@@ -1,9 +1,12 @@
-<div class="footer-container">
-    <h2>the footer</h2>
-</div>
-<!--end footer container-->
 </div>
 <!--end .inner-container-->
+
+<div class="footer-container">
+
+
+</div>
+<!--end footer container-->
+
 
 </div>
 <!--end .container-->

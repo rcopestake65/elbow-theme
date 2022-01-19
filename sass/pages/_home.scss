@@ -1,78 +1,56 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
-/*////////////////HOME PAGE (called About in the site)\\\\\\\\\\\\\\\*/
-.home {
-    .grid-container {
-        display: grid;
-        grid-template-columns: 2fr 1.25fr 1fr;
-        grid-template-rows: 1fr auto;
-    }
-    .strapline {
-        grid-column: span 2/-1;
-        width: 70%;
-        justify-self: end;
-        z-index: -1;
-    }
+/*////////////////HOME PAGE \\\\\\\\\\\\\\\*/
 
-    /*circle images*/
-    .circle-01 {
-        margin-left: -7%;
-        align-self: end;
+.intro p {
+    font-size: $fs-22;
+    @include below(800px) {
+        font-size: $fs-16;
     }
-    .circle-02 {
-        margin-left: -30%;
-        align-self: end;
-        z-index: 10;
+}
+/*opening paragraph and quote*/
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include below(600px) {
+        grid-template-columns: 1fr;
     }
-    .icons {
-        display: flex;
-        flex-direction: column;
-        align-self: end;
-        align-items: center;
-        z-index: 10;
-        justify-content: space-between;
+    p {
+        background-color: $clr-white-transparent;
+        padding: 10px;
+        border-radius: 5px;
+        height: fit-content;
+        @include below(500px) {
+            padding: 0;
+        }
     }
-    .icons-item {
-        padding: 10px 0;
-    }
-    .fa-facebook {
-        color: #4372b8;
-    }
-    .fa-instagram {
-        color: #da1b52;
-    }
-    .fa-twitter {
-        color: #5ea9dd;
+    img {
+        max-width: 80%;
+        justify-self: end;
+        @include below(800px) {
+            max-width: 100%;
+        }
+        @include below(600px) {
+            max-width: 80%;
+            justify-self: center;
+            padding: 1rem 0;
+        }
     }
 }
 
-/*smaller screen to one column*/
-@include below($br-medium) {
-    .home {
-        .grid-container {
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            justify-items: center;
-        }
-        .strapline {
-            grid-column: span 1;
-            width: 70%;
-            justify-self: center;
-            padding-bottom: 1rem;
-        }
-
-        .circle-01 {
-            margin-left: 0;
-            align-self: center;
-        }
-        .circle-02 {
-            margin-left: 0;
-            align-self: center;
-        }
-        .icons {
-            flex-direction: row;
-            z-index: 10;
-            justify-content: space-evenly;
-        }
+.circles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.circle-2 {
+    margin-left: -10%;
+    max-width: 60%;
+    align-self: end;
+    @include below(600px) {
+        max-width: 100%;
+        align-self: center;
     }
+}
+.main-text {
+    padding-top: 2rem;
 }
