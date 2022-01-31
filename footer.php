@@ -1,6 +1,3 @@
-</div>
-<!--end .inner-container-->
-
 <div class="footer-container">
 
 

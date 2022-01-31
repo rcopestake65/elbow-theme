@@ -2,6 +2,15 @@
 /*
 //////////////////////TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
+@font-face {
+  font-family: "Dinot";
+  src: url("../fonts/DINOT.woff2") format("woff2"), url("../fonts/Dinot.woff") format("woff");
+}
+@font-face {
+  font-family: "Dinot-Bold";
+  src: url("../fonts/Dinot-Bold.woff") format("woff2"), url("../fonts/Dinot-Bold.woff") format("woff");
+}
+
 p {
   padding-bottom: 1rem;
 }
