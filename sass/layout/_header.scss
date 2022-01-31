@@ -2,3 +2,12 @@
 /*
 ///////////////////////////HEADER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
+.header-container a {
+    display: contents;
+}
+.header-container img {
+    max-width: 170px;
+}
+.header-rule {
+    border-bottom: 1px solid $clr-white;
+}

@@ -8,12 +8,6 @@
   list-style-type: none;
 }
 
-@include above(1100px) {
-  .menu-container {
-    margin-top: -3rem;
-  }
-}
-
 .menu-container > * {
   align-self: center;
   flex-grow: 1;
@@ -23,113 +17,124 @@
   justify-content: flex-end;
 }
 
-.logo {
-  display: flex;
-  align-items: flex-start;
-}
 .logo-gif {
   margin-top: -1.2rem;
 }
 
 //menu item li is relative to control the absolute position of the sub menu li
-@include above(1100px) {
-  .menu-item {
+@include above(900px) {
+  .menu-item:not(:last-of-type) {
     position: relative;
-    padding-right: 1rem;
+    padding-right: 2.5rem;
   }
-  .my-menu-item-5 {
-    padding-right: 0;
+  .menu .current_page_item > a {
+    color: $clr-white;
+    outline: 2px solid $clr-brand-pink;
+    border-radius: 15px;
+  }
+  .menu .current-menu-ancestor .current_page_item > a {
+    color: $clr-dark;
   }
 }
 
 .menu-item:hover .sub-menu {
   display: block;
 }
+.sub-menu a:hover {
+  color: $clr-white;
+}
 
 .menu li a {
   display: block;
-  padding: 0 5px;
+  padding: 5px 10px;
+  line-height: 1;
+  border-radius: 15px;
+  color: $clr-white;
   text-decoration: none;
-}
-.menu .my-menu-item-4 a:first-of-type {
-  padding-right: 0;
-}
-.sub-menu {
-  //display: none;
-  height: auto;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  border-radius: 3px;
-  white-space: nowrap;
-  z-index: 100;
-  li {
-    transition: all 0.2s ease;
-    padding: 0.5rem 1rem;
+  &:hover {
+    color: $clr-white;
+    outline: 2px solid $clr-brand-pink;
+    border-radius: 15px;
   }
-  li a {
-    font-size: $fs-14;
-    font-weight: normal;
-    letter-spacing: 1px;
+}
+.menu li:last-of-type a {
+  &:hover {
+    color: $clr-brand-pink;
+    outline: none;
+    border-radius: 15px;
+  }
+}
 
-    transition: all 0.2 ease;
+.toggle-btn-container {
+  display: none;
+}
 
-    .toggle-btn-container {
-      display: none;
+// /* Mobile menu */
+.sub-menu-container {
+  height: 0;
+  overflow: hidden;
+  background-color: $clr-dark;
+  transition: all 0.5s ease;
+}
+.mobile-menu-container {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background-color: $clr-brand-blue-light;
+}
+.mobile-sub-menu {
+  margin-left: 0;
+  font-size: $fs-16;
+}
+
+@include below(900px) {
+  .current-menu-item li a {
+    color: $clr-brand-pink;
+  }
+
+  .mobile-menu {
+    background-color: $clr-brand-blue-light;
+    padding-left: 2rem;
+    li {
+      padding: 0.25rem 0;
     }
-
-    // /* Mobile menu */
-    .sub-menu-container {
-      height: 0;
-      overflow: hidden;
-      transition: all 0.5s ease;
-    }
-    .mobile-menu-container {
-      height: 0px;
-      overflow: hidden;
-      transition: all 0.5s linear;
-    }
-    .mobile-sub-menu {
-      margin-left: 0;
-      font-size: $fs-16;
-    }
-
-    @include below(1100px) {
-      .mobile-menu {
-        font-size: $fs-16;
-        position: relative;
-        li a {
-          font-size: $fs-14;
-        }
-        a:first-of-type {
-          display: block;
-          padding: 0.5rem 1rem;
-          margin-right: 42px;
-        }
-      }
-
-      .toggle-btn-container {
-        display: block;
-      }
-      .nav-toggle {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        transition: all 0.3s linear;
-        width: 50px;
-      }
-      .menu {
-        display: none;
-      }
-
-      .menu {
-        flex-direction: column;
-      }
-      .sub-menu {
-        display: block;
+    li a {
+      color: $clr-white;
+      width: 100%;
+      display: inline-block;
+      &:hover {
+        color: $clr-brand-pink;
       }
     }
+    li.current-menu-item a {
+      color: $clr-brand-pink;
+    }
+  }
+  .toggle-btn-container {
+    display: block;
+  }
+  .nav-toggle {
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    background-color: $clr-brand-pink;
+    transition: all 0.3s linear;
+    width: 50px;
+    &:hover {
+      background-color: $clr-brand-blue-light;
+    }
+  }
+  .menu {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+}
+@include below(700px) {
+  .nav-toggle {
+    top: 0;
+    right: 0;
   }
 }
