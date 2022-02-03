@@ -11,3 +11,21 @@
 .header-rule {
     border-bottom: 1px solid $clr-white;
 }
+.go-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 127px;
+    height: 127px;
+    z-index: -2;
+    transition: $transition;
+}
+.go-home-hover {
+    height: 30px;
+    width: 30px;
+    top: 25px;
+    left: 25px;
+    -webkit-box-shadow: -2px -2px 0px 1px hsl(344, 37%, 68%);
+    box-shadow: -2px -2px 0px 1px hsl(344, 37%, 68%);
+    cursor: pointer;
+}

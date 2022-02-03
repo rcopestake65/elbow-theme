@@ -3,12 +3,16 @@
 //////////////////////TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 @font-face {
-  font-family: "Dinot";
-  src: url("../fonts/DINOT.woff2") format("woff2"), url("../fonts/Dinot.woff") format("woff");
+  font-family: "DINOT";
+  src: url("../fonts/DINOT.woff2") format("woff2"), url("../fonts/DINOT.woff") format("woff");
 }
 @font-face {
-  font-family: "Dinot-Bold";
-  src: url("../fonts/Dinot-Bold.woff") format("woff2"), url("../fonts/Dinot-Bold.woff") format("woff");
+  font-family: "DINOT-Bold";
+  src: url("../fonts/DINOT-Bold.woff") format("woff2"), url("../fonts/DINOT-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "DINOT-Black";
+  src: url("../fonts/DINOT-Black.woff") format("woff2"), url("../fonts/DINOT-Bblack.woff") format("woff");
 }
 
 p {

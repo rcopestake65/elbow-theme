@@ -1,7 +1,11 @@
 <header>
 
     <div class="header-container">
-        <a href="<?php echo get_bloginfo('url') . '/'; ?>"><img src="/wp-content/uploads/logo.png"></a>
+        <div class="logo" id="logo">
+            <a id="logo" href="<?php echo get_bloginfo('url') . '/'; ?>"><img src="/wp-content/uploads/logo.png"></a>
+            <?php if (!is_front_page()) : echo '<div class="go-home"></div>'; endif;
+                ?>
+        </div>
 
         <nav role="navigation">
 

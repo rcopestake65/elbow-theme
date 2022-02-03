@@ -1,0 +1,130 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////SLIDER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+/*hero slider*/
+.slider-container {
+    position: relative;
+    height: 650px;
+    @include below(750px) {
+        height: 550px;
+    }
+    @include below(650px) {
+        height: 500px;
+    }
+    @include below(550px) {
+        height: 450px;
+    }
+    @include below(400px) {
+        height: 500px;
+    }
+    overflow: hidden;
+    max-width: 80rem;
+    h2 {
+        position: absolute;
+        top: 5%;
+        left: 40%;
+        color: $clr-white;
+        font-family: $font-black;
+        font-size: 6rem;
+        font-weight: bold;
+        line-height: 1;
+        @include below(1000px) {
+            font-size: 4rem;
+        }
+        @include below(650px) {
+            font-size: 2.5rem;
+        }
+        @include below(500px) {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    }
+    p {
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        color: $clr-brand-pink;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1;
+        padding-right: 0.5rem;
+        @include below(1000px) {
+            left: 40%;
+            font-size: 1.25rem;
+        }
+        @include below(500px) {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding-top: 1rem;
+        }
+        a {
+            display: block;
+            width: fit-content;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 15px;
+            outline: 1px solid $clr-brand-pink;
+            color: $clr-white;
+            padding: 5px 1.5rem;
+            margin-top: 2rem;
+            @include below(500px) {
+                margin-left: 2px;
+            }
+            &:hover {
+                background-color: $clr-brand-pink;
+                color: $clr-brand-blue;
+            }
+        }
+    }
+}
+
+.slide {
+    position: absolute;
+    background: $clr-brand-blue;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+}
+
+/*posts slider*/
+.posts-slider {
+    padding: 1rem;
+    background-color: $clr-brand-blue-light;
+    position: relative;
+    h3 {
+        color: $clr-white;
+        text-transform: uppercase;
+        font-size: $fs-14;
+        padding-bottom: 0.5rem;
+    }
+}
+.posts-slider-container {
+    display: flex;
+    overflow: hidden;
+    color: $clr-white;
+    gap: 1rem;
+    // font-size: $fs-14;
+    h4 a {
+        color: $clr-white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a {
+        color: $clr-brand-pink;
+        text-transform: uppercase;
+        border-bottom: 1px solid $clr-brand-pink-light;
+        &:hover {
+            background-color: $clr-white-transparent;
+            color: $clr-brand-blue-light;
+        }
+    }
+}
+
+.post-slide {
+    width: 100%;
+    min-width: 20rem;
+    transition: 0.25s all ease-in-out;
+}

@@ -5,6 +5,7 @@ function load_css()
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), false, 'all');
     wp_enqueue_style('style');
     wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.2.0/css/all.css' );
+    wp_enqueue_style('cssgg', 'https://unpkg.com/css.gg/icons/all.css');
 }
 
 add_action('wp_enqueue_scripts', 'load_css');
@@ -16,11 +17,9 @@ function loadjs()
 
     wp_register_script('app', get_template_directory_uri() . '/js/app.js', '', 1, true);
     wp_enqueue_script('app');
-    
 
     wp_register_script( 'jQuery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', null, null, false );
     wp_enqueue_script('jQuery');
-
 }
 add_action('wp_enqueue_scripts', 'loadjs');
 
@@ -56,3 +55,12 @@ function wps_deregister_styles() {
     wp_dequeue_style( 'global-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'wps_deregister_styles', 100 );
+
+//add featured image to posts admin
+
+function altea_theme_support(){
+    add_theme_support('post-thumbnails');
+  
+  }
+  add_action ('after_setup_theme', 'altea_theme_support');
+  ?>

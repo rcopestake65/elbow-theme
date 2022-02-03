@@ -8,3 +8,91 @@ button {
     cursor: pointer;
     transition: all 0.3s linear;
 }
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
+    justify-items: space-between;
+    align-content: center;
+    width: 100%;
+    top: 45%;
+    @include below(650px) {
+        top: 20%;
+    }
+}
+.prevBtn,
+.nextBtn {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: $clr-brand-blue-light-transparent;
+    i {
+        position: absolute;
+        top: 17px;
+        left: 10px;
+    }
+    &:hover {
+        background-color: $clr-brand-pink;
+        i {
+            color: $clr-brand-blue;
+        }
+    }
+}
+
+.posts-btn-container {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+}
+.posts-prevBtn,
+.posts-nextBtn {
+    height: 25px;
+    width: 50px;
+    display: inline-block;
+    position: relative;
+}
+.posts-prevBtn {
+    border-radius: 25px 25px 0 0;
+    background-color: $clr-brand-pink;
+    transform: rotate(-90deg) translateY(15px);
+    i {
+        position: absolute;
+        top: 2px;
+        left: 22px;
+        color: $clr-brand-blue;
+        &:hover {
+            color: $clr-white;
+        }
+    }
+    &:hover {
+        background-color: $clr-brand-pink-dark;
+        i {
+            color: $clr-white;
+        }
+    }
+}
+.posts-nextBtn {
+    border-radius: 25px 25px 0 0;
+    background-color: $clr-white;
+    transform: rotate(90deg) translateY(15px);
+    i {
+        position: absolute;
+        top: 2px;
+        left: 22px;
+        color: $clr-brand-blue;
+    }
+    &:hover {
+        background-color: $clr-brand-pink-dark;
+        i {
+            color: $clr-white;
+        }
+    }
+}
+.biog-btn {
+    background: none;
+    color: $clr-white;
+}

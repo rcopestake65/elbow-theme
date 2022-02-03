@@ -2,55 +2,23 @@
 @use "../base" as *;
 /*////////////////HOME PAGE \\\\\\\\\\\\\\\*/
 
-.intro p {
-    font-size: $fs-22;
-    @include below(800px) {
-        font-size: $fs-16;
-    }
+/*Team section*/
+
+/*hide image and biog to begin with*/
+// .item {
+//     display: none;
+// }
+.biog-content {
+    display: flex;
 }
-/*opening paragraph and quote*/
-.intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    @include below(600px) {
-        grid-template-columns: 1fr;
-    }
-    p {
-        background-color: $clr-white-transparent;
-        padding: 10px;
-        border-radius: 5px;
-        height: fit-content;
-        @include below(500px) {
-            padding: 0;
-        }
-    }
-    img {
-        max-width: 80%;
-        justify-self: end;
-        @include below(800px) {
-            max-width: 100%;
-        }
-        @include below(600px) {
-            max-width: 80%;
-            justify-self: center;
-            padding: 1rem 0;
-        }
-    }
+.img-link,
+.biog-text {
+    width: 50%;
 }
 
-.circles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.content {
+    display: none;
 }
-.circle-2 {
-    margin-left: -10%;
-    max-width: 60%;
-    align-self: end;
-    @include below(600px) {
-        max-width: 100%;
-        align-self: center;
-    }
-}
-.main-text {
-    padding-top: 2rem;
+.active {
+    display: block;
 }
