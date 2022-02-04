@@ -107,60 +107,33 @@ function postsCarousel() {
 }
 
 //homepage team section
-// const btns = document.querySelectorAll(".biog-btn");
-// const col21 = document.querySelector(".col-two-content-1");
-// const col22 = document.querySelector(".col-two-content-2");
-// const col23 = document.querySelector(".col-two-content-3");
-// const col31 = document.querySelector(".col-three-content-1");
-// const col32 = document.querySelector(".col-three-content-2");
-// const col33 = document.querySelector(".col-three-content-3");
-
-// const btn1 = document.querySelector(".biog-btn-1");
-// btn1.addEventListener("click", function () {
-//   col21.classList.toggle("hide");
-//   col31.classList.toggle("hide");
-//   //hide
-//   col22.classList.add("hide");
-//   col32.classList.add("hide");
-//   col23.classList.add("hide");
-//   col33.classList.add("hide");
-// });
-
-// const btn2 = document.querySelector(".biog-btn-2");
-// btn2.addEventListener("click", function () {
-//   col22.classList.toggle("hide");
-//   col32.classList.toggle("hide");
-//   //hide
-//   col21.classList.add("hide");
-//   col31.classList.add("hide");
-//   col23.classList.add("hide");
-//   col33.classList.add("hide");
-// });
-
-// const btn3 = document.querySelector(".biog-btn-3");
-// btn3.addEventListener("click", function () {
-//   col23.classList.toggle("hide");
-//   col33.classList.toggle("hide");
-//   //hide
-//   col21.classList.add("hide");
-//   col31.classList.add("hide");
-//   col22.classList.add("hide");
-//   col32.classList.add("hide");
-// });
 
 const team = document.querySelector(".team-container");
 const biogBtns = document.querySelectorAll(".biog-btn");
 const content = document.querySelectorAll(".content");
+const firstBtn = document.querySelector(".biog-btn-1");
+const firstItem = document.getElementById("biog-1");
 
+//acitivate the first btn and biog item
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    firstItem.classList.add("active");
+    firstBtn.classList.add("btn-active");
+  },
+  false
+);
+//activate the others on click
 team.addEventListener("click", function (e) {
   const id = e.target.dataset.id;
 
   if (id) {
-    //remove .active from other buttons
+    //remove .btn-active from other buttons
     biogBtns.forEach(function (btn) {
-      btn.classList.remove("active");
+      btn.classList.remove("btn-active");
     });
-    e.target.classList.add("active");
+    e.target.classList.add("btn-active");
     //hide content
     content.forEach(function (biog) {
       biog.classList.remove("active");
@@ -170,3 +143,7 @@ team.addEventListener("click", function (e) {
     element.classList.add("active");
   }
 });
+
+//Date in footer
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();

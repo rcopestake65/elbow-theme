@@ -4,21 +4,175 @@
 
 /*Team section*/
 
-/*hide image and biog to begin with*/
-// .item {
-//     display: none;
-// }
-.biog-content {
-    display: flex;
-}
 .img-link,
 .biog-text {
-    width: 50%;
+    width: fit-content;
+    position: relative;
 }
-
 .content {
     display: none;
 }
 .active {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    @include below(800px) {
+        display: block;
+    }
+}
+.biog-text {
+    align-self: flex-end;
+    padding: 0 2rem;
+    max-width: 400px;
+    @include below(800px) {
+        max-width: 100%;
+        padding: 2rem 0 0 0;
+    }
+}
+//positioning the btn under the biog image
+.link-container {
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+}
+//Contact section
+.contact {
+    padding: 4rem 0;
+}
+.contact-link {
+    margin: 0 auto;
+    font-size: $fs-24;
+    background-color: $clr-brand-pink;
+    padding: 0.2rem 5rem 0.4rem 5rem;
+    border-radius: 35px;
+    color: $clr-white;
+    text-transform: uppercase;
+    &:hover {
+        background-color: $clr-brand-blue-dark;
+        color: $clr-brand-pink;
+    }
+}
+
+/*Companies Container (home page)*/
+.companies {
+    margin-top: 4rem;
+    color: $clr-white;
+    h3 {
+        text-transform: uppercase;
+    }
+}
+.companies-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 2rem;
+    color: $clr-white;
+    @include below(800px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    a {
+        outline: 1px solid $clr-brand-pink;
+        border-radius: 15px;
+        padding: 5px 10px;
+        color: $clr-white;
+        text-transform: uppercase;
+        &:hover {
+            background-color: $clr-brand-pink;
+            outline: none;
+            color: $clr-brand-blue;
+        }
+    }
+    @include below(800px) {
+        div:nth-of-type(1) {
+            grid-column: 1/-1;
+        }
+    }
+    div:nth-of-type(2) {
+        grid-column: 2/4;
+        grid-row: 1;
+        z-index: 10;
+        align-self: center;
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include below(800px) {
+            grid-column: 1;
+            grid-row: 2;
+            align-self: flex-end;
+        }
+
+        img {
+            max-width: 65%;
+            @include below(800px) {
+                max-width: 90%;
+            }
+        }
+        a {
+            display: block;
+            position: relative;
+            margin-top: 1rem;
+            background-color: $clr-brand-pink;
+            padding: 1.25rem;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            outline: none;
+            &:hover {
+                background-color: $clr-brand-blue-light;
+                i {
+                    color: $clr-white;
+                }
+            }
+            i {
+                position: absolute;
+                top: 16px;
+                left: 6px;
+                color: $clr-brand-blue;
+            }
+        }
+    }
+    div:nth-of-type(3) {
+        grid-column: 3 / 5;
+        grid-row: 1;
+        @include below(800px) {
+            grid-column: 2;
+            grid-row: 2;
+            padding-top: 2rem;
+        }
+    }
+}
+
+/*Team Container*/
+.team {
+    background-color: $clr-brand-blue-dark;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: $clr-white;
+    p:first-of-type {
+        max-width: 20rem;
+    }
+    h3 {
+        padding-bottom: 2rem;
+        text-transform: uppercase;
+    }
+}
+.team-container {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    @include below(800px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.col-one {
+    a {
+        display: block;
+    }
+}
+
+//home page contact section
+.contact-link-container {
+    display: flex;
+}
+.contact-icon-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }

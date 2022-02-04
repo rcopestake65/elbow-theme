@@ -94,5 +94,37 @@ button {
 }
 .biog-btn {
     background: none;
+    color: $clr-brand-blue-light;
+    font-size: $fs-20;
+    display: block;
+    padding-left: 0;
+    @include below(800px) {
+        font-size: $fs-16;
+        padding: 0.5rem 0;
+    }
+}
+.btn-active {
     color: $clr-white;
+}
+
+//biog btn
+
+.img-link a {
+    display: block;
+    position: relative;
+    background-color: #cc8f9f;
+    padding: 1.25rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    outline: none;
+    i {
+        position: absolute;
+        top: 16px;
+        left: 6px;
+        color: #0f2b4d;
+    }
+    &:hover {
+        background-color: $clr-white;
+    }
 }

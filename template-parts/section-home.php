@@ -4,17 +4,14 @@
 
 <div class="slider-container">
 
-    <!--ACF-->
     <?php if(have_rows('slides')):?>
-
     <?php while(have_rows('slides')): the_row();
+            $image = get_sub_field('image');
+            $headline = get_sub_field('headline');
+            $text = get_sub_field('text');
+            $link = get_sub_field('link');
+            ?>
 
-
-                        $image = get_sub_field('image');
-                        $headline = get_sub_field('headline');
-                        $text = get_sub_field('text');
-                        $link = get_sub_field('link');
-                        ?>
     <div class="slide">
         <img src="<?php echo $image; ?>" class="slide-img" alt="">
         <h2 id="slider-header"><?php echo $headline;?></h2>
@@ -23,8 +20,6 @@
     </div>
     <?php endwhile;?>
     <?php endif;?>
-    <!--end ACF-->
-
 
     <div class="btn-container">
         <button type="button" class="prevBtn"><i class="gg-arrow-long-left"></i></button>
@@ -38,14 +33,10 @@
     <h3>News</h3>
     <div class="posts-slider-container">
 
-        <?php
-$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 12 ) );
- 
-if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); 
-    // Loop output goes here ?>
+        <?php $latest_blog_posts = new WP_Query( array( 'posts_per_page' => 12 ) );
+            if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); 
+                // Loop output goes here ?>
         <div class="post-slide">
-            <!--ACF-->
-
             <h4><a href="<?php the_permalink(); ?>"> <?php the_date(); ?></a></h4>
             <?php the_excerpt(); ?>
             <?php $download = get_field('download'); 
@@ -54,13 +45,10 @@ if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts
             <?php endif; ?>
         </div>
 
-
         <?php endwhile; ?>
         <!-- reset global post variable. After this point, we are back to the Main Query object -->
         <?php wp_reset_postdata(); ?>
         <?php endif;?>
-        <!--end ACF-->
-
 
     </div>
     <div class="posts-btn-container">
@@ -69,25 +57,20 @@ if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts
     </div>
     <!--.posts-slider-container-->
 </section>
-<!--.post-slider-outer-container-->
+<!--.post-slider-->
 
 <!--Companies-->
 <section class="companies">
     <h3>Companies</h3>
     <div class="companies-container">
         <div>
-
             <p><?php the_field('intro'); ?></p>
-
             <a href="<?php the_field('link'); ?>">See all companies</a>
-
-
         </div>
         <div>
             <?php if( get_field('logo') ): ?>
             <img src="<?php the_field('logo'); ?>" />
             <?php endif; ?>
-
             <a href=""><i class="gg-arrow-long-right"></i></a>
         </div>
         <div>
@@ -95,52 +78,51 @@ if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts
             <img src="<?php the_field('image'); ?>" alt="">
             <?php endif; ?>
         </div>
-        <div>
-
-        </div>
     </div>
+    <!--.companies container-->
 </section>
 </div>
+<!--.inner-container-->
 </div>
-<!--close .container and .inner-container for full width of bg colour-->
+<!--.container-->
+<!--close .container and .inner-container for full width of bg colour on team section-->
 <section class="team">
     <div class="container">
         <div class="inner-container">
+            <h3><?php the_field('header'); ?></h3>
+            <p><?php the_field('intro'); ?></p>
             <div class="team-container">
-
-
                 <div class="col-one">
                     <?php
-            if( have_rows('team_biography') ):
-                while( have_rows('team_biography') ) : the_row();
-                $name = get_sub_field('name');
-                $image = get_sub_field('image');
-                $link = get_sub_field('link');
-                $biog = get_sub_field('biog');
-                ?>
+                        if( have_rows('team') ):
+                            while( have_rows('team') ) : the_row();
+                            $name = get_sub_field('name');
+                    ?>
 
-                    <div class="button-content-<?php echo get_row_index(); ?>">
-                        <button class="active biog-btn biog-btn-<?php echo get_row_index(); ?>"
-                            data-id="biog-<?php echo get_row_index(); ?>"><?php echo $name; ?></button>
-                    </div>
+
+                    <button class="biog-btn biog-btn-<?php echo get_row_index(); ?>"
+                        data-id="biog-<?php echo get_row_index(); ?>"><?php echo $name; ?></button>
 
                     <?php endwhile; else : endif; ?>
                 </div>
                 <div class="col-two">
                     <?php
-            if( have_rows('team_biography') ):
-                while( have_rows('team_biography') ) : the_row();
-                $name = get_sub_field('name');
-                $image = get_sub_field('image');
-                $link = get_sub_field('link');
-                $biog = get_sub_field('biog');
-                ?>
+                        if( have_rows('team') ):
+                            while( have_rows('team') ) : the_row();
+                            $image = get_sub_field('image');
+                            $link = get_sub_field('link');
+                            $biog = get_sub_field('biog');
+                    ?>
                     <div class="content content-<?php echo get_row_index(); ?>"
                         id="biog-<?php echo get_row_index(); ?>">
 
                         <div class="img-link">
+
                             <img src="<?php echo $image; ?>" alt="" />
-                            <a href="<?php echo esc_url( $link ); ?>"><i class="gg-arrow-long-right"></i></a>
+                            <div class="link-container">
+                                <a href="<?php echo esc_url( $link ); ?>"><i class="gg-arrow-long-right"></i></a>
+                            </div>
+
                         </div>
                         <div class="biog-text">
                             <p><?php echo $biog; ?></p>
@@ -158,6 +140,30 @@ if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts
 </section>
 <div class="container">
     <div class="inner-container">
+        <section class="contact">
+            <div class="contact-link-container">
+                <a class="contact-link" href="/contact">contact us</a>
+            </div>
+            <!--
+            <div class="contact-icon-container">
+                <div>
+                    <img src="/wp-content/uploads/general-enquiries.svg" alt="">
+                    <a href="#">general enquiries</a>
+                </div>
+                <div>
+                    <img src="/wp-content/uploads/entrepenuers.svg" alt="">
+                    <a href="#">entrepeneurs</a>
+                </div>
+                <div>
+                    <img src="/wp-content/uploads/media.svg" alt="">
+                    <a href="#">media</a>
+                </div>
+                <div>
+                    <img src="/wp-content/uploads/telephone.svg" alt="">
+                    <a href="#">telephone</a>
+                </div>
+            </div>-->
 
+        </section>
 
         <?php endwhile; else: endif;?>
