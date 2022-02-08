@@ -61,7 +61,6 @@
   &:hover {
     color: $clr-brand-pink;
     outline: none;
-    border-radius: 15px;
   }
 }
 
@@ -87,7 +86,7 @@
   font-size: $fs-16;
 }
 
-@include below(900px) {
+@include below(1050px) {
   .current-menu-item li a {
     color: $clr-brand-pink;
   }

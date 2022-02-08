@@ -26,7 +26,7 @@
                         <li><a href="#">Cookies policy</a></li>
                     </ul>
                 </div>
-                <div><a href="#"><i class="fab fa-linkedin fa-lg"></i></a></div>
+                <div><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></div>
                 <div>
                     <p>&copy; Copyright <span id="date"></span> Elbow Beach Capital Limited I Elbow Beach
                         Capital is a

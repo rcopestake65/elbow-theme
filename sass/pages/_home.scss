@@ -68,18 +68,7 @@
     @include below(800px) {
         grid-template-columns: 1fr 1fr;
     }
-    a {
-        outline: 1px solid $clr-brand-pink;
-        border-radius: 15px;
-        padding: 5px 10px;
-        color: $clr-white;
-        text-transform: uppercase;
-        &:hover {
-            background-color: $clr-brand-pink;
-            outline: none;
-            color: $clr-brand-blue;
-        }
-    }
+
     @include below(800px) {
         div:nth-of-type(1) {
             grid-column: 1/-1;
@@ -171,8 +160,4 @@
 //home page contact section
 .contact-link-container {
     display: flex;
-}
-.contact-icon-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
 }

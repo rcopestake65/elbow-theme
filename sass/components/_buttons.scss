@@ -128,3 +128,48 @@ button {
         background-color: $clr-white;
     }
 }
+//pill btn
+.pill-btn {
+    display: block;
+    width: fit-content;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    outline: 1px solid $clr-brand-pink;
+    color: $clr-white;
+    padding: 5px 1.5rem;
+    margin-top: 2rem;
+    @include below(500px) {
+        margin-left: 2px;
+    }
+    &:hover {
+        background-color: $clr-brand-pink;
+        color: $clr-brand-blue;
+    }
+}
+//underline to pill on hover
+.underline {
+    color: $clr-brand-pink;
+    text-transform: uppercase;
+    font-size: $fs-18;
+    text-decoration: underline;
+    padding: 0.1rem 0.5rem;
+    line-height: 1.2;
+    &:hover {
+        background-color: $clr-brand-pink;
+        color: $clr-white;
+        border-radius: 25px;
+        padding: 0.1rem 0.5rem;
+        text-decoration: none;
+    }
+    @include below(850px) {
+        font-size: $fs-16;
+    }
+}
+.underline.left-align {
+    padding-left: 0;
+    &:hover {
+        padding-left: 0.5rem;
+    }
+}

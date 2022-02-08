@@ -15,7 +15,7 @@
     <div class="slide">
         <img src="<?php echo $image; ?>" class="slide-img" alt="">
         <h2 id="slider-header"><?php echo $headline;?></h2>
-        <p id="slider-text"><?php echo $text;?><a href="<?php echo esc_url( $link ); ?>" class="btn-more">Learn more</a>
+        <p id="slider-text"><?php echo $text;?><a href="<?php echo esc_url( $link ); ?>" class="pill-btn">Learn more</a>
         </p>
     </div>
     <?php endwhile;?>
@@ -41,7 +41,7 @@
             <?php the_excerpt(); ?>
             <?php $download = get_field('download'); 
         if( $download ): ?>
-            <p> <a href="<?php echo esc_url( $download ); ?>">Download</a></p>
+            <p> <a class="underline left-align" href="<?php echo esc_url( $download ); ?>">Download</a></p>
             <?php endif; ?>
         </div>
 
@@ -65,7 +65,7 @@
     <div class="companies-container">
         <div>
             <p><?php the_field('intro'); ?></p>
-            <a href="<?php the_field('link'); ?>">See all companies</a>
+            <a class="pill-btn" href="<?php the_field('link'); ?>">See all companies</a>
         </div>
         <div>
             <?php if( get_field('logo') ): ?>
@@ -144,26 +144,8 @@
             <div class="contact-link-container">
                 <a class="contact-link" href="/contact">contact us</a>
             </div>
-            <!--
-            <div class="contact-icon-container">
-                <div>
-                    <img src="/wp-content/uploads/general-enquiries.svg" alt="">
-                    <a href="#">general enquiries</a>
-                </div>
-                <div>
-                    <img src="/wp-content/uploads/entrepenuers.svg" alt="">
-                    <a href="#">entrepeneurs</a>
-                </div>
-                <div>
-                    <img src="/wp-content/uploads/media.svg" alt="">
-                    <a href="#">media</a>
-                </div>
-                <div>
-                    <img src="/wp-content/uploads/telephone.svg" alt="">
-                    <a href="#">telephone</a>
-                </div>
-            </div>-->
 
+            <?php get_template_part('template-parts/section', 'icons');?>
         </section>
 
         <?php endwhile; else: endif;?>

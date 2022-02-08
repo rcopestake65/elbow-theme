@@ -44,8 +44,18 @@
         color: $clr-white;
         display: inline-block;
     }
+    .fab {
+        transition: 0.25s all ease-in-out;
+    }
+    .fab:hover {
+        color: $clr-brand-pink;
+    }
     ul a {
         text-decoration: underline;
+        transition: 0.25s all ease-in-out;
+        &:hover {
+            color: $clr-brand-pink;
+        }
     }
     p.address {
         color: $clr-brand-pink;
