@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+
+/*
+//////////////////////////////BODY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-stack;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  margin: 0 auto;
+  background-color: $clr-brand-blue;
+  color: $clr-white;
+}

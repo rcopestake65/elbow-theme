@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////ICON SECTION \\\\\\\\\\\\\\\*/
+
+.contact-icon-container,
+.values-icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding-top: 4rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // flex-grow: 1;
+        @include below(550px) {
+            flex-direction: column;
+        }
+    }
+
+    div a img,
+    div img {
+        transition: 0.4s ease all;
+        height: 70px;
+        width: 70px;
+
+        div img {
+            @include below(400px) {
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+    div a img:hover {
+        filter: invert(59%) sepia(30%) saturate(493%) hue-rotate(294deg) brightness(132%) contrast(91%);
+    }
+    //icons on the About page that aren't links
+    div img.about-icons {
+        filter: invert(59%) sepia(30%) saturate(493%) hue-rotate(294deg) brightness(132%) contrast(91%);
+    }
+    div p {
+        padding-top: 1rem;
+    }
+}
+.contact-icon-container {
+    @include below(600px) {
+        flex-direction: column;
+    }
+}

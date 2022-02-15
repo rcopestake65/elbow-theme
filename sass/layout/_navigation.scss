@@ -1,0 +1,140 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+.menu,
+.sub-menu {
+  list-style-type: none;
+}
+
+.menu-container > * {
+  align-self: center;
+  flex-grow: 1;
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+.logo-gif {
+  margin-top: -1.2rem;
+}
+
+//menu item li is relative to control the absolute position of the sub menu li
+@include above(900px) {
+  .menu-item:not(:last-of-type) {
+    position: relative;
+    padding-right: 2.5rem;
+  }
+  .menu .current_page_item > a {
+    color: $clr-white;
+    outline: 2px solid $clr-brand-pink;
+    border-radius: 15px;
+  }
+  .menu .current-menu-ancestor .current_page_item > a {
+    color: $clr-dark;
+  }
+}
+
+.menu-item:hover .sub-menu {
+  display: block;
+}
+.sub-menu a:hover {
+  color: $clr-white;
+}
+
+.menu li a {
+  display: block;
+  padding: 5px 10px;
+  line-height: 1;
+  border-radius: 15px;
+  color: $clr-white;
+  text-decoration: none;
+  &:hover {
+    color: $clr-white;
+    outline: 2px solid $clr-brand-pink;
+    border-radius: 15px;
+  }
+}
+.menu li:last-of-type a {
+  &:hover {
+    color: $clr-brand-pink;
+    outline: none;
+  }
+}
+
+.toggle-btn-container {
+  display: none;
+}
+
+// /* Mobile menu */
+.sub-menu-container {
+  height: 0;
+  overflow: hidden;
+  background-color: $clr-dark;
+  transition: all 0.5s ease;
+}
+.mobile-menu-container {
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  background-color: $clr-brand-blue-light;
+}
+.mobile-sub-menu {
+  margin-left: 0;
+  font-size: $fs-16;
+}
+
+@include below(1050px) {
+  .current-menu-item li a {
+    color: $clr-brand-pink;
+  }
+
+  .mobile-menu {
+    background-color: $clr-brand-blue-light;
+    padding-left: 2rem;
+    li {
+      padding: 0.25rem 0;
+    }
+    li a {
+      color: $clr-white;
+      width: 100%;
+      display: inline-block;
+      &:hover {
+        color: $clr-brand-pink;
+      }
+    }
+    li.current-menu-item a {
+      color: $clr-brand-pink;
+    }
+  }
+  .toggle-btn-container {
+    display: block;
+  }
+  .nav-toggle {
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+    background-color: $clr-brand-pink;
+    transition: all 0.3s linear;
+    width: 50px;
+    &:hover {
+      background-color: $clr-brand-blue-light;
+    }
+  }
+  .menu {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+}
+@include below(700px) {
+  .nav-toggle {
+    top: 0;
+    right: 0;
+  }
+}

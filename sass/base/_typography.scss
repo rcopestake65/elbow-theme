@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as *;
+/*
+//////////////////////TYPOGRAPHY\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+@font-face {
+  font-family: "DINOT";
+  src: url("../fonts/DINOT.woff2") format("woff2"), url("../fonts/DINOT.woff") format("woff");
+}
+@font-face {
+  font-family: "DINOT-Bold";
+  src: url("../fonts/DINOT-Bold.woff") format("woff2"), url("../fonts/DINOT-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "DINOT-Black";
+  src: url("../fonts/DINOT-Black.woff") format("woff2"), url("../fonts/DINOT-Bblack.woff") format("woff");
+}
+
+p {
+  padding-bottom: 1rem;
+}
+a {
+  text-decoration: none;
+  transition: 300ms;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+h3 {
+  color: #cc8f9f;
+  text-transform: uppercase;
+}
+.container {
+  h2:first-of-type {
+    color: white;
+    font-family: "DINOT-black", Fallback, sans-serif;
+    font-size: 3.75rem;
+    font-weight: bold;
+    line-height: 1;
+    padding: 2rem 0;
+  }
+}

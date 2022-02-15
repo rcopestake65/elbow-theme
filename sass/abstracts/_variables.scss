@@ -1,0 +1,56 @@
+//utility colors
+$clr-white: hsl(0, 0%, 100%);
+$clr-gray: hsl(0, 0%, 54%);
+$clr-black: hsl(0, 0%, 0%);
+$clr-dark: hsl(0, 0%, 13%);
+$clr-white-transparent: hsla(360, 100%, 100%, 0.3);
+$clr-black-transparent: hsla(0, 0%, 0%, 0.18);
+
+//branding colors
+
+//branding color variants
+$clr-brand-blue: hsl(213, 68%, 18%);
+$clr-brand-blue-dark: hsl(217, 75%, 12%);
+$clr-brand-blue-light: hsl(224, 24%, 33%);
+$clr-brand-blue-light-transparent: hsl(224, 24%, 33%, 0.5);
+$clr-brand-pink: hsl(344, 37%, 68%);
+$clr-brand-pink-lighter: hsl(344, 50%, 75%);
+$clr-brand-pink-light: hsl(344, 37%, 68%, 0.5);
+$clr-brand-pink-dark: hsl(343, 16%, 43%);
+
+//fonts
+$font-stack: "DINOT", Fallback, sans-serif;
+$font-black: "DINOT-black", Fallback, sans-serif;
+$font-size-base: 1rem;
+
+//font-sizes
+$fs-14: 0.875rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-22: 1.375rem;
+$fs-24: 1.5rem;
+$fs-30: 1.875rem;
+$fs-32: 2rem;
+$fs-36: 2.25rem;
+$fs-48: 3rem;
+$fs-60: 3.75rem;
+$fs-85: 5.313rem;
+
+//break points
+
+@mixin below($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+@mixin above($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+$br-small: 400px;
+$br-medium: 800px;
+
+//transitions
+$transition: all 0.3s linear;

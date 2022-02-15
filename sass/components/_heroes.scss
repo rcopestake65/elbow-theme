@@ -1,0 +1,61 @@
+@use "../abstracts/variables" as *;
+/*
+///////////////////////////HEROES\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+.hero {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 2rem;
+    padding-top: 0;
+    padding-right: 0;
+    @include below(650px) {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    div:first-of-type {
+        grid-column: 1/4;
+        grid-row: 1;
+        z-index: 10;
+        @include below(650px) {
+            grid-column: 1/-1;
+            grid-row: 1;
+            padding: 0 1rem;
+        }
+    }
+    div:last-of-type {
+        grid-column: 3/5;
+        grid-row: 1;
+        justify-self: end;
+        @include below(850px) {
+            grid-column: 2/5;
+        }
+        @include below(650px) {
+            grid-column: 1/-1;
+        }
+    }
+    h2 {
+        color: white;
+        font-family: "DINOT-black", Fallback, sans-serif;
+        font-size: $fs-60;
+        font-weight: bold;
+        line-height: 1;
+        padding: 2rem 0;
+        @include below(650px) {
+            font-size: $fs-32;
+        }
+    }
+    p {
+        color: $clr-brand-pink;
+        font-size: $fs-22;
+        // max-width: 75%;
+        @include below(650px) {
+            font-size: $fs-16;
+        }
+    }
+    img {
+        @include below(1000px) {
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+}

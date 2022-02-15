@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////APPROACH PAGE \\\\\\\\\\\\\\\*/
+
+.investment-outer-container {
+    h3 {
+        color: $clr-brand-blue;
+        padding-bottom: 1rem;
+    }
+    .col-1 {
+        color: $clr-brand-blue;
+    }
+    .col-2 {
+        color: $clr-white;
+    }
+    ul {
+        list-style-type: disc;
+    }
+}

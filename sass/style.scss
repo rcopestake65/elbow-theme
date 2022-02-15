@@ -1,0 +1,21 @@
+@use "abstracts/variables";
+@use "abstracts/animation";
+@use "abstracts/utilities";
+
+@use "base/reset";
+@use "base/typography";
+
+@use "layout/body";
+@use "layout/containers";
+@use "layout/header";
+@use "layout/navigation";
+@use "layout/footer";
+
+@use "pages/home";
+@use "pages/about";
+@use "pages/approach";
+
+@use "components/buttons";
+@use "components/sliders";
+@use "components/heroes";
+@use "components/icons";
