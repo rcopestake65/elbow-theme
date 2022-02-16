@@ -9,7 +9,6 @@ window.addEventListener("scroll", () => {
     topBtn.classList.remove("show-link");
   }
 });
-
 //logo hover effect
 const frontPage = document.querySelector(".home");
 const logo = document.querySelector(".logo");
@@ -46,7 +45,44 @@ toggleBtn.addEventListener("click", function () {
 });
 
 //Hero Slider
-//see app-with-slider.js if not using slider plugin
+
+const slides = document.querySelectorAll(".slide");
+const btnContainer = document.querySelector(".btn-container");
+const nextBtn = document.querySelector(".nextBtn");
+const prevBtn = document.querySelector(".prevBtn");
+
+slides.forEach(function (slide, index) {
+  slide.style.left = `${index * 100}%`;
+});
+
+let counter = 0;
+nextBtn.addEventListener("click", function () {
+  counter++;
+  carousel();
+  console.log(slides.length);
+});
+prevBtn.addEventListener("click", function () {
+  counter--;
+  carousel();
+});
+
+function carousel() {
+  //loop back to beginning
+  if (counter === slides.length) {
+    counter = 0;
+  }
+  if (counter < 0) {
+    counter = slides.length - 1;
+  }
+  slides.forEach(function (slide) {
+    slide.style.transform = `translateX(-${counter * 100}%)`;
+  });
+}
+//hide net/prev btsn if there is only one slide
+if (slides.length < 2) {
+  btnContainer.classList.add("hide");
+}
+console.log(slides.length);
 
 //Posts Slider
 const postSlide = document.querySelectorAll(".post-slide");

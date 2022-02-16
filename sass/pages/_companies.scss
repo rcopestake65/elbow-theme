@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////COMPANIES PAGE \\\\\\\\\\\\\\\*/
+.companies-page-container {
+    .logo {
+        max-width: 50%;
+    }
+}

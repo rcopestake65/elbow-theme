@@ -43,7 +43,9 @@
         <h3><?php the_field('column_two_title')?></h3>
         <?php the_field('column_two_text')?>
     </div>
-
+    <?php if( get_field('investment_image') ): ?>
+    <img src="<?php the_field('investment_image'); ?>" />
+    <?php endif; ?>
 </div>
 
 <?php endwhile; else: endif;?>

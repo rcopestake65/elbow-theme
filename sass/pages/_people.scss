@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////PEOPLE PAGE \\\\\\\\\\\\\\\*/
+.people-container {
+    img {
+        width: 100%;
+    }
+    .heading {
+        background-color: $clr-brand-blue-light;
+        padding: 1rem;
+        border-top: 1px solid $clr-white;
+    }
+    .biog {
+        padding-top: 1rem;
+    }
+}

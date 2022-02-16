@@ -43,7 +43,8 @@ h3 {
   color: #cc8f9f;
   text-transform: uppercase;
 }
-.container {
+.container,
+.companies {
   h2:first-of-type {
     color: white;
     font-family: "DINOT-black", Fallback, sans-serif;
@@ -52,4 +53,37 @@ h3 {
     line-height: 1;
     padding: 2rem 0;
   }
+}
+.contact {
+  h2:first-of-type {
+    color: $clr-brand-blue;
+    font-family: "DINOT-black", Fallback, sans-serif;
+    font-size: $fs-48;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0;
+    @include below(820px) {
+      font-size: $fs-32;
+    }
+  }
+  h3:first-of-type {
+    color: $clr-brand-pink;
+    font-size: $fs-48;
+    line-height: 1;
+    padding: 0;
+    text-transform: none;
+    @include below(820px) {
+      font-size: $fs-32;
+    }
+  }
+}
+.companies {
+  h3:nth-of-type(1),
+  h3:nth-of-type(2),
+  h3:nth-of-type(3) {
+    text-transform: none;
+  }
+}
+.capitals {
+  text-transform: uppercase;
 }

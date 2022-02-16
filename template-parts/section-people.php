@@ -12,19 +12,30 @@
                             while( have_rows('team') ) : the_row();
                             $name = get_sub_field('name');
                             $image = get_sub_field('image');
-                            $link = get_sub_field('link');
+                            $job = get_sub_field('job');
                             $biog = get_sub_field('biog');
                     ?>
-            <div class="image">
+            <div class="col-<?php echo get_row_index(); ?>">
                 <img src="<?php echo $image; ?>" alt="" />
+                <div class="heading">
+                    <h3> <?php echo $name; ?></h3>
+                    <?php echo $job; ?>
+                </div>
+                <div class="biog">
+                    <?php echo $biog; ?>
+                </div>
             </div>
-            <div class="biog">
-                <?php echo $name; ?>
-                <?php echo $biog; ?>
-            </div>
+
 
             <?php endwhile; else : endif; ?>
         </div>
+    </section>
+
+    <section>
+
+
+        <h3>Advisory Board</h3>
+
     </section>
 </div>
 

@@ -2,7 +2,30 @@
 
 <?php the_content();?>
 
+<div class="slider-container">
 
+    <?php if(have_rows('slides')):?>
+    <?php while(have_rows('slides')): the_row();
+            $image = get_sub_field('image');
+            $headline = get_sub_field('headline');
+            $text = get_sub_field('text');
+            $link = get_sub_field('link');
+            ?>
+
+    <div class="slide slide-<?php echo get_row_index(); ?>">
+        <img src="<?php echo $image; ?>" class="slide-img" alt="">
+        <h2 id="slider-header"><?php echo $headline;?></h2>
+        <p id="slider-text"><?php echo $text;?><a href="<?php echo esc_url( $link ); ?>" class="pill-btn">Learn more</a>
+        </p>
+    </div>
+    <?php endwhile;?>
+    <?php endif;?>
+
+    <div class="btn-container">
+        <button type="button" class="prevBtn"><i class="gg-arrow-long-left"></i></button>
+        <button type="button" class="nextBtn"><i class="gg-arrow-long-right"></i></button>
+    </div>
+</div>
 
 <!--News Slider-->
 <section class="posts-slider">
