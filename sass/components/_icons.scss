@@ -7,15 +7,18 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
-    padding-top: 4rem;
-
+    padding-top: 2rem;
+    @include below(550px) {
+        flex-direction: column;
+        padding-top: 1rem;
+    }
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
         // flex-grow: 1;
         @include below(550px) {
-            flex-direction: column;
+            margin-bottom: 2rem;
         }
     }
 
@@ -36,9 +39,9 @@
         filter: invert(59%) sepia(30%) saturate(493%) hue-rotate(294deg) brightness(132%) contrast(91%);
     }
     //icons on the About page that aren't links
-    div img.about-icons {
-        filter: invert(59%) sepia(30%) saturate(493%) hue-rotate(294deg) brightness(132%) contrast(91%);
-    }
+    // div img.about-icons {
+    //     filter: invert(59%) sepia(30%) saturate(493%) hue-rotate(294deg) brightness(132%) contrast(91%);
+    // }
     div p {
         padding-top: 1rem;
     }

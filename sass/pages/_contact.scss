@@ -1,22 +1,30 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
 /*////////////////CONTACT PAGE \\\\\\\\\\\\\\\*/
+.contact {
+    h2:first-of-type {
+        color: $clr-white;
+        font-size: $fs-60;
+    }
+}
 .contact-form-page {
     background-color: $clr-white;
 }
 /*FORM*/
 .contact-form-container {
-    display: grid;
-    grid-template-columns: 30% 1fr;
-    grid-gap: 2rem;
-    @include below(800px) {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 0.5rem;
-    }
     a {
         color: $clr-brand-blue;
         word-wrap: initial;
+    }
+    h2:first-of-type {
+        color: $clr-brand-blue;
+        line-height: 1;
+        padding: 0;
+    }
+    h3 {
+        font-size: $fs-60;
+        text-transform: none;
+        line-height: 1;
     }
 }
 .address {

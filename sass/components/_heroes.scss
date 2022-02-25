@@ -1,5 +1,82 @@
 @use "../abstracts/variables" as *;
 /*
+///////////////////////////HOMEPAGE HEROE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+.hero-home {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 2rem;
+    padding-top: 0;
+    padding-right: 0;
+    @include below(650px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 1fr;
+        padding: 0;
+    }
+    .hero-img {
+        grid-column: 1/3;
+        grid-row: 1/3;
+        @include below(1000px) {
+            grid-column: 1/4;
+        }
+        @include below(650px) {
+            grid-column: 1/5;
+        }
+        img {
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+    .hero-title {
+        grid-column: 2/5;
+        grid-row: 1;
+        @include below(850px) {
+            grid-column: 2/5;
+        }
+        @include below(650px) {
+            grid-column: 1/-1;
+        }
+        h2 {
+            color: white;
+            font-family: "DINOT-black", Fallback, sans-serif;
+            font-size: $fs-85;
+            font-weight: bold;
+            line-height: 1;
+            padding: 2rem 0 0 5rem;
+            @include below(1000px) {
+                font-size: $fs-60;
+            }
+            @include below(650px) {
+                font-size: $fs-48;
+                padding: 2rem;
+            }
+        }
+    }
+    .strapline {
+        grid-column: 3/5;
+        grid-row: 2;
+        @include below(650px) {
+            grid-column: 1/5;
+            align-self: end;
+        }
+        p {
+            color: $clr-brand-pink;
+            font-size: $fs-36;
+            max-width: 75%;
+            padding-left: 2rem;
+            line-height: 1.25;
+            @include below(1000px) {
+                max-width: 100%;
+                font-size: $fs-22;
+            }
+            @include below(650px) {
+                font-size: $fs-20;
+                padding: 2rem;
+            }
+        }
+    }
+}
+/*
 ///////////////////////////HEROES\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 .hero {

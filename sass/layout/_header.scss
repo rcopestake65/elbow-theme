@@ -13,18 +13,18 @@
 }
 .go-home {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 127px;
-    height: 127px;
+    top: 20px;
+    left: -10px;
+    width: 50px;
+    height: 50px;
     z-index: -2;
-    transition: $transition;
+    transition: all 0.3s linear;
 }
 .go-home-hover {
     height: 30px;
     width: 30px;
     top: 25px;
-    left: 25px;
+    left: 0;
     -webkit-box-shadow: -2px -2px 0px 1px hsl(344, 37%, 68%);
     box-shadow: -2px -2px 0px 1px hsl(344, 37%, 68%);
     cursor: pointer;

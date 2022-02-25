@@ -10,7 +10,7 @@
 </div>
 <div class="our-focus-outer-container">
     <div class="container">
-
+        <div id="content"></div>
         <section class="our-focus">
 
             <h3 class="pb1">INVESTMENT SECTORS</h3>
@@ -34,14 +34,19 @@
 
 </div>
 <div class="investment-outer-container">
+    <div class="container">
+        <div class="investment-inner-container">
+            <div class="col-1">
+                <h3><?php the_field('column_one_title')?></h3>
+                <?php the_field('column_one_text')?>
+            </div>
+            <div class="col-2">
+                <h3><?php the_field('column_two_title')?></h3>
+                <?php the_field('column_two_text')?>
+            </div>
 
-    <div class="col-1">
-        <h3><?php the_field('column_one_title')?></h3>
-        <?php the_field('column_one_text')?>
-    </div>
-    <div class="col-2">
-        <h3><?php the_field('column_two_title')?></h3>
-        <?php the_field('column_two_text')?>
+        </div>
+
     </div>
     <?php if( get_field('investment_image') ): ?>
     <img src="<?php the_field('investment_image'); ?>" />

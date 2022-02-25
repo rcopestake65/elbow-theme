@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////TERMS PAGE \\\\\\\\\\\\\\\*/
+
+.terms {
+    background-color: $clr-white;
+    color: $clr-brand-blue;
+    a {
+        color: $clr-brand-blue;
+        word-wrap: initial;
+        text-decoration: underline;
+    }
+    h2:first-of-type {
+        color: $clr-brand-blue;
+        line-height: 1;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+    h3 {
+        font-size: $fs-20;
+        color: $clr-brand-blue;
+        font-weight: bold;
+        text-transform: none;
+        line-height: 1;
+        padding-bottom: 0.5rem;
+    }
+}

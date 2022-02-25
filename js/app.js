@@ -1,3 +1,6 @@
+//Date in footer
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();
 //back to top button show on scroll offset
 const topBtn = document.querySelector(".top-link");
 
@@ -118,7 +121,3 @@ team.addEventListener("click", function (e) {
     element.classList.add("active");
   }
 });
-
-//Date in footer
-const date = document.getElementById("date");
-date.innerHTML = new Date().getFullYear();

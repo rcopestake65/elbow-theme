@@ -1,7 +1,13 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
 /*////////////////HOME PAGE \\\\\\\\\\\\\\\*/
-
+/*Hero*/
+.mobile-only-hero {
+    display: none;
+    // @include below(700px) {
+    //     display: block;
+    // }
+}
 /*Team section*/
 
 .img-link,
@@ -21,9 +27,9 @@
     }
 }
 .biog-text {
-    align-self: flex-end;
+    // align-self: flex-end;
     padding: 0 2rem;
-    margin-top: 5rem;
+    // margin-top: 5rem;
     // max-width: 400px;
     @include below(800px) {
         max-width: 100%;
@@ -41,7 +47,7 @@
 //     padding: 4rem 0;
 // }
 .contact-link {
-    margin: 0 auto;
+    margin: 2rem auto;
     font-size: $fs-24;
     background-color: $clr-brand-pink;
     padding: 0.2rem 5rem 0.4rem 5rem;

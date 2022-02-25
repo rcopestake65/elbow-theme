@@ -1,11 +1,14 @@
-<?php if(have_posts()): while(have_posts()): the_post();?>
+<?php get_template_part('template-parts/section','home-hero'); ?>
 
+<?php if(have_posts()): while(have_posts()): the_post();?>
 <?php the_content();?>
 
 
 
+
+
 <!--News Slider-->
-<section class="posts-slider">
+<section class="posts-slider" id="posts">
 
     <h3>News</h3>
     <div class="posts-slider-container">
@@ -41,14 +44,14 @@
     <h3>Companies</h3>
     <div class="companies-container">
         <div>
-            <p><?php the_field('intro'); ?></p>
-            <a class="pill-btn" href="<?php the_field('link'); ?>">All companies</a>
+            <p><?php the_field('hc_intro'); ?></p>
+            <a class="pill-btn" href="/companies">All companies</a>
         </div>
         <div>
             <?php if( get_field('logo') ): ?>
             <img src="<?php the_field('logo'); ?>" />
             <?php endif; ?>
-            <a href=""><i class="gg-arrow-long-right"></i></a>
+            <a href="<?php the_field('link'); ?>"><i class="gg-arrow-long-right"></i></a>
         </div>
         <div>
             <?php if( get_field('image') ): ?>
@@ -80,7 +83,7 @@
                     data-id="biog-<?php echo get_row_index(); ?>"><?php echo $name; ?></button>
 
                 <?php endwhile; else : endif; ?>
-                <a class="pill-btn" href="<?php the_field('link'); ?>">See Advisory Board</a>
+                <a class="pill-btn" href="/people#board">See Advisory Board</a>
             </div>
             <div class="col-two">
                 <?php
@@ -121,7 +124,7 @@
             <a class="contact-link" href="/contact">contact us</a>
         </div>
 
-        <?php get_template_part('template-parts/section', 'icons');?>
+
     </section>
 
     <?php endwhile; else: endif;?>

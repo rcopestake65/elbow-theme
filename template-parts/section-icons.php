@@ -8,7 +8,7 @@
     $link_title = $link['title'];
                     ?>
     <div>
-        <a href=""><img src="<?php echo $image; ?>" alt=""></a>
+        <a href="<?php echo esc_url( $link_url ); ?>"><img src="<?php echo $image; ?>" alt=""></a>
         <p><a class="underline" href="<?php echo esc_url( $link_url ); ?>"><?php echo esc_html( $link_title ); ?></a>
         </p>
 

@@ -163,7 +163,7 @@ button {
         background-color: $clr-brand-pink;
         color: $clr-white;
         border-radius: 25px;
-        padding: 0.1rem 0.5rem;
+        padding: 0.25rem 0.5rem;
         text-decoration: none;
     }
     @include below(850px) {
@@ -201,6 +201,44 @@ button {
     z-index: 100;
     @include below($br-small) {
         display: none;
+    }
+}
+@keyframes bounce {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*hero down btn*/
+.down-btn {
+    display: block;
+    position: relative;
+    margin-top: 1rem;
+    background-color: #cc8f9f;
+    padding: 1.25rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    outline: none;
+    color: $clr-brand-blue;
+    animation: bounce 2s ease-in-out infinite;
+    &:hover {
+        background-color: $clr-brand-blue-light;
+    }
+    i {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        color: #0f2b4d;
+    }
+    &:hover i {
+        color: $clr-white;
     }
 }
 @keyframes bounce {

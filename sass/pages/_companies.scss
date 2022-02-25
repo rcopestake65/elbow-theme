@@ -1,8 +1,29 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
 /*////////////////COMPANIES PAGE \\\\\\\\\\\\\\\*/
-.companies-page-container {
-    .logo {
-        max-width: 50%;
+.company {
+    a {
+        display: block;
+        position: relative;
+        margin-top: 1rem;
+        background-color: $clr-brand-pink;
+        padding: 1.25rem;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        outline: none;
+        margin-left: 40%;
+        &:hover {
+            background-color: $clr-brand-blue-light;
+            i {
+                color: $clr-white;
+            }
+        }
+        i {
+            position: absolute;
+            top: 16px;
+            left: 6px;
+            color: $clr-brand-blue;
+        }
     }
 }
