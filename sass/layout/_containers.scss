@@ -33,7 +33,7 @@ section {
 // }
 .investment-outer-container {
     background-color: $clr-white;
-    background-image: linear-gradient(to right, $clr-white 50%, $clr-brand-pink 50%);
+    background-image: linear-gradient(to right, $clr-white 50%, $clr-brand-blue-dark 50%);
     @include below(800px) {
         .container {
             padding: 0;
@@ -52,11 +52,11 @@ section {
     }
     .col-1 {
         background-color: $clr-white;
-        padding: 2rem 2rem;
+        padding: 2rem 2rem 2rem 0;
     }
     .col-2 {
-        background-color: $clr-brand-pink;
-        padding: 2rem 2rem;
+        background-color: $clr-brand-blue-dark;
+        padding: 2rem 0 2rem 3rem;
     }
 }
 
@@ -93,7 +93,15 @@ section {
         padding-bottom: 0;
     }
 }
-
+//News Single
+.news-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    @include below(800px) {
+        grid-template-columns: 1fr;
+    }
+}
 //Our People
 .people-container {
     display: grid;
@@ -107,15 +115,18 @@ section {
 //Companies
 .companies-page-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
     margin-top: 3rem;
     @include below(800px) {
         grid-template-columns: 1fr;
     }
     .company {
         position: relative;
-        margin-top: 30%;
+        grid-column: 1/4;
+        grid-row: 1;
+        z-index: 1;
+        padding-top: 1rem;
         @include below(800px) {
             margin-top: 0;
             img {
@@ -124,7 +135,8 @@ section {
         }
     }
     .company-img {
-        margin-left: -50%;
+        grid-column: 2/7;
+        grid-row: 1;
         @include below(800px) {
             margin-left: 0;
             img {
@@ -133,17 +145,36 @@ section {
         }
     }
 }
-//Companies individual pages
-.companies-outer-container {
+.companies-page-inner-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+//Company individual page
+.company-outer-container {
     background-color: $clr-white;
 }
-.companies-content-container {
+.company-content-container {
     display: grid;
     grid-template-columns: 1fr 30%;
     gap: 2rem;
     padding: 2rem 0;
     @include below(500px) {
         grid-template-columns: 1fr;
+    }
+}
+.company-hero {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    .bg-img {
+        grid-column: 1/13;
+        grid-row: 1/4;
+    }
+    .logo {
+        grid-column: 2/6;
+        z-index: 1;
+        grid-row: 2;
     }
 }
 //Contact

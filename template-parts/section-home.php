@@ -6,7 +6,6 @@
 
 
 
-
 <!--News Slider-->
 <section class="posts-slider" id="posts">
 
@@ -38,85 +37,44 @@
     <!--.posts-slider-container-->
 </section>
 <!--.post-slider-->
-
-<!--Companies-->
-<section class="companies">
-    <h3>Companies</h3>
-    <div class="companies-container">
-        <div>
-            <p><?php the_field('hc_intro'); ?></p>
-            <a class="pill-btn" href="/companies">All companies</a>
-        </div>
-        <div>
-            <?php if( get_field('logo') ): ?>
-            <img src="<?php the_field('logo'); ?>" />
-            <?php endif; ?>
-            <a href="<?php the_field('link'); ?>"><i class="gg-arrow-long-right"></i></a>
-        </div>
-        <div>
-            <?php if( get_field('image') ): ?>
-            <img src="<?php the_field('image'); ?>" alt="">
-            <?php endif; ?>
-        </div>
-    </div>
-    <!--.companies container-->
-</section>
-
 </div>
-<!--.container-->
-<!--close .container and for full width of bg colour on team section-->
-<section class="team">
+
+<section class="approach">
     <div class="container">
-
-        <h3><?php the_field('header'); ?></h3>
-        <p><?php the_field('intro'); ?></p>
-        <div class="team-container">
-            <div class="col-one">
-                <?php
-                        if( have_rows('team') ):
-                            while( have_rows('team') ) : the_row();
-                            $name = get_sub_field('name');
-                    ?>
-
-
-                <button class="biog-btn biog-btn-<?php echo get_row_index(); ?>"
-                    data-id="biog-<?php echo get_row_index(); ?>"><?php echo $name; ?></button>
-
-                <?php endwhile; else : endif; ?>
-                <a class="pill-btn" href="/people#board">See Advisory Board</a>
-            </div>
-            <div class="col-two">
-                <?php
-                        if( have_rows('team') ):
-                            while( have_rows('team') ) : the_row();
-                            $image = get_sub_field('image');
-                            $link = get_sub_field('link');
-                            $biog = get_sub_field('biog');
-                    ?>
-                <div class="content content-<?php echo get_row_index(); ?>" id="biog-<?php echo get_row_index(); ?>">
-
-                    <div class="img-link">
-
-                        <img src="<?php echo $image; ?>" alt="" />
-                        <div class="link-container">
-                            <a href="<?php echo esc_url( $link ); ?>"><i class="gg-arrow-long-right"></i></a>
-                        </div>
-
-                    </div>
-                    <div class="biog-text">
-                        <?php echo $biog; ?>
-                    </div>
-
-                </div>
-                <?php endwhile; else : endif; ?>
-            </div>
-
-        </div>
-
-
+        <h3><?php the_field('approach_header'); ?></h3>
+        <p><?php the_field('approach_text'); ?></p>
     </div>
     <!--.container-->
 </section>
+
+<!--Companies-->
+<div class="container">
+    <section class="companies">
+        <h3>Companies</h3>
+        <div class="companies-container">
+            <div>
+                <p><?php the_field('hc_intro'); ?></p>
+                <a class="pill-btn" href="<?php the_field('link'); ?>">All companies</a>
+            </div>
+            <div>
+                <?php if( get_field('logo') ): ?>
+                <img src="<?php the_field('logo'); ?>" />
+                <?php endif; ?>
+                <a href="<?php the_field('companies_link'); ?>"><i class="gg-arrow-long-right"></i></a>
+            </div>
+            <div>
+                <?php if( get_field('image') ): ?>
+                <img src="<?php the_field('image'); ?>" alt="">
+                <?php endif; ?>
+            </div>
+        </div>
+        <!--.companies container-->
+    </section>
+
+
+</div>
+<!--.container-->
+
 <div class="container">
 
     <section class="contact">

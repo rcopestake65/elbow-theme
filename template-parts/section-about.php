@@ -40,11 +40,8 @@
 
 
     <section class="values">
-        <h3><?php the_field('title'); ?></h3>
-        <p><?php the_field('text'); ?></p>
-
-
-
+        <h3><?php the_field('values_title'); ?></h3>
+        <p><?php the_field('values_text'); ?></p>
     </section>
 
 
@@ -53,7 +50,7 @@
 <div class="about-text-outer-container">
     <div class="container">
 
-        <section class="about-text">
+        <section class="about-text" id="foundation">
             <div><img src="/wp-content/uploads/01-1.jpg" alt=""></div>
 
             <div>

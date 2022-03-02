@@ -54,19 +54,6 @@
     </div>
 </section>
 
-<section>
-
-
-    <h3>Advisory Board</h3>
-
-</section>
-
-
-
-
-
-
-
 <!--close containers for full width bg-->
 </div>
 </div>

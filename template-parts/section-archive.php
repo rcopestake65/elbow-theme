@@ -29,10 +29,14 @@ get_header();
 
 
                 <?php endif; ?>
+
+
             </div>
             <?php } } ?>
         </div>
-
-
+        <div class="pagination">
+            <div class="nav-previous"><?php previous_posts_link( 'Prev' ); ?></div>
+            <div class="nav-next"><?php next_posts_link( 'Next' ); ?></div>
+        </div>
     </section>
 </div>

@@ -62,7 +62,7 @@
 
 /*Companies Container (home page)*/
 .companies {
-    margin-top: 4rem;
+    margin-top: 2rem;
     color: $clr-white;
     h3 {
         text-transform: uppercase;
@@ -144,35 +144,12 @@
     }
 }
 
-/*Team Container*/
-.team {
+/*Approach Container*/
+.approach {
     background-color: $clr-brand-blue-dark;
     // padding: 2rem 0;
-    margin-top: 2rem;
+    margin-top: 4rem;
     color: $clr-white;
-    p:first-of-type {
-        max-width: 20rem;
-    }
-    h3 {
-        padding-bottom: 2rem;
-        text-transform: uppercase;
-    }
-}
-.team-container {
-    display: grid;
-    grid-template-columns: 30% 1fr;
-    @include below(750px) {
-        grid-template-columns: 40% 1fr;
-    }
-    @include below(600px) {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-}
-.col-one {
-    a {
-        display: block;
-    }
 }
 
 //home page contact section

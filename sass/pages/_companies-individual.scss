@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
 /*////////////////COMPANIES INDIVIDUAL PAGES \\\\\\\\\\\\\\\*/
-.companies-content-container {
+.company-content-container {
     color: $clr-brand-blue;
     h3 {
         color: $clr-brand-blue;
@@ -21,17 +21,17 @@
         color: $clr-brand-blue;
     }
 }
-.companies-hero {
-    position: relative;
-    .logo {
-        position: absolute;
-        top: 30%;
-        left: 5%;
-        z-index: 10;
-        @include below(600px) {
-            img {
-                max-width: 50%;
-            }
-        }
-    }
-}
+// .companies-hero {
+//     position: relative;
+//     .logo {
+//         position: absolute;
+//         top: 30%;
+//         left: 5%;
+//         z-index: 10;
+//         @include below(600px) {
+//             img {
+//                 max-width: 50%;
+//             }
+//         }
+//     }
+// }

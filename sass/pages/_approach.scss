@@ -1,10 +1,39 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
 /*////////////////APPROACH PAGE \\\\\\\\\\\\\\\*/
-
+.investment-sectors-outer-container {
+    background-color: $clr-brand-pink;
+}
+.investment-sectors {
+    h3 {
+        color: $clr-white;
+    }
+}
+.investment-sectors-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    color: $clr-white;
+    @include below(650px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    h4 {
+        font-weight: bold;
+        font-size: $fs-20;
+        color: $clr-brand-blue;
+    }
+    h5 {
+        font-size: $fs-20;
+    }
+    p {
+        // font-size: $fs-14;
+        padding-top: 0.5rem;
+    }
+}
 .investment-outer-container {
     h3 {
-        color: $clr-brand-blue;
+        color: $clr-brand-pink;
         padding-bottom: 1rem;
     }
     .col-1 {

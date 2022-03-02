@@ -64,4 +64,47 @@ function elbow_theme_support(){
   
   }
   add_action ('after_setup_theme', 'elbow_theme_support');
-  ?>
+  
+
+  //add class to next prev btns
+
+  add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+  return 'class="pill-btn"';
+}
+
+
+function posts_link_next_class($format){
+    $format = str_replace('href=', 'class="pill-btn" href=', $format);
+    return $format;
+}
+add_filter('next_post_link', 'posts_link_next_class');
+
+function posts_link_prev_class($format) {
+    $format = str_replace('href=', 'class="pill-btn" href=', $format);
+    return $format;
+}
+add_filter('previous_post_link', 'posts_link_prev_class');
+
+//custom post type
+
+function investments()
+{
+$args = array(
+    'label' => 'Investments',
+    'public' => true,
+    'has_archive' => true,
+    'show_in_rest' => true,
+    //'supports' => array('title', 'editor','thumbnail', 'excerpt'),
+    'menu_icon'   => 'dashicons-portfolio',
+    'taxonomies' => array('category'),
+);
+
+register_post_type('investments', $args);
+}
+add_action('init', 'investments');
+
+
+?>

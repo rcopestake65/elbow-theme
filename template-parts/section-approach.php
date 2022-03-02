@@ -8,15 +8,15 @@
 <!--close containers for full width bg-->
 </div>
 </div>
-<div class="our-focus-outer-container">
+<div class="investment-sectors-outer-container">
     <div class="container">
         <div id="content"></div>
-        <section class="our-focus">
+        <section class="investment-sectors">
 
             <h3 class="pb1">INVESTMENT SECTORS</h3>
-            <div class="our-focus-container">
-                <?php if(have_rows('focus')):?>
-                <?php while(have_rows('focus')): the_row();
+            <div class="investment-sectors-container">
+                <?php if(have_rows('sectors')):?>
+                <?php while(have_rows('sectors')): the_row();
             
             $title = get_sub_field('title');
             $text = get_sub_field('text');
