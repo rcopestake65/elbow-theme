@@ -4,17 +4,32 @@
 <!--close container-->
 <div class="company-outer-container">
     <div class="container">
-        <div class="company-hero">
-            <div class="bg-img">
-                <img src="<?php the_field('image'); ?>" alt="" />
-            </div>
-            <div class="logo">
-                <img class="logo" src="<?php the_field('logo') ?>" alt="" />
-            </div>
-        </div>
+
         <div class="company-content-container">
             <div class="col-1">
-                <h3>Description</h3>
+                <div class="hero-logo-container">
+                    <!--main image-->
+                    <?php
+                    $image = get_field('image');
+                    $picture = $image['sizes']['large'];
+                    $alt = $image['alt'];
+                    ?>
+                    <?php if(get_field('image')):?>
+                    <img class="main-image" src="<?php echo $picture;?>" alt="<?php echo esc_attr($alt); ?>" />
+                    <?php endif; ?>
+
+                    <!--logo-->
+                    <?php
+                    $logo = get_field('logo');
+                    $logoimage = $logo['sizes']['medium'];
+                    $logoalt = $logo['alt'];
+                    ?>
+                    <?php if(get_field('logo')):?>
+                    <img class="logo" src="<?php echo $logoimage;?>" alt="<?php echo esc_attr($logoalt); ?>" />
+                    <?php endif; ?>
+                </div>
+
+                <!-- <h3>Description</h3> -->
                 <?php the_field('description'); ?>
                 <div class="company-quote">
                     <blockquote>
@@ -41,15 +56,16 @@
                 <p><a class="button" href="<?php echo esc_url( $link_url ); ?>"
                         target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                     <?php endif; ?></p>
-                <h3>View Press Release</h3>
                 <?php if( get_field('press_release') ): ?>
+                <h3>View Press Release</h3>
+
                 <p><a href="<?php the_field('press_release'); ?>"><i class="fas fa-file-pdf fa-lg"></i></a></p>
                 <?php endif; ?>
 
             </div>
             <div class="pagination">
-                <div class="nav-next"><?php next_post_link('%link'); ?></div>
-                <div class="nav-previous"><?php previous_post_link('%link'); ?></div>
+                <div class="nav-next"><?php next_post_link('%link', 'Next'); ?></div>
+                <div class="nav-previous"><?php previous_post_link('%link', 'Previous'); ?></div>
 
             </div>
         </div>

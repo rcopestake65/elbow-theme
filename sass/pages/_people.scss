@@ -5,6 +5,7 @@
     img {
         width: 100%;
     }
+
     .heading {
         background-color: $clr-brand-blue-light;
         padding: 1rem;
@@ -12,5 +13,12 @@
     }
     .biog {
         padding-top: 1rem;
+    }
+}
+.advisory-board {
+    img {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
     }
 }

@@ -78,7 +78,7 @@
     background-color: $clr-brand-blue-light;
     position: relative;
     margin-top: 4rem;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     h3 {
         // color: $clr-white;
         text-transform: uppercase;
@@ -104,4 +104,15 @@
     width: 100%;
     min-width: 20rem;
     transition: 0.25s all ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    // justify-content: space-evenly;
+    h4 {
+        padding-bottom: 0.75rem;
+    }
+    p:nth-of-type(2) {
+        padding-top: 1rem;
+        margin-top: auto;
+    }
 }

@@ -75,3 +75,46 @@
         }
     }
 }
+//charities section
+.charitites-outer-container {
+    background-color: $clr-brand-blue-dark;
+    padding: 2rem 0;
+}
+.charities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+    @include below(400px) {
+        grid-template-columns: 1fr;
+    }
+    img {
+        width: 200px;
+        height: 100px;
+        object-fit: contain;
+    }
+}
+.charities-grid-item {
+    background-color: $clr-white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h3 {
+        color: $clr-brand-blue;
+        padding-bottom: 1rem;
+        text-transform: none;
+    }
+    p {
+        color: $clr-brand-blue;
+    }
+    a {
+        color: $clr-brand-blue;
+        border-bottom: 1px solid $clr-brand-blue;
+        padding-bottom: 0.25rem;
+        i {
+            padding-left: 0.5rem;
+            color: $clr-brand-pink;
+        }
+    }
+}

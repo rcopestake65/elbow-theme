@@ -14,14 +14,20 @@ get_header();
                     if( $download ): ?>
             <div class="links-logo-container">
                 <p> <a class="underline left-align" href="<?php echo esc_url( $download ); ?>">Download</a></p>
+
                 <img src="<?php the_field('logo'); ?>" />
             </div>
-
+            <?php endif; ?>
         </div>
         <div class="col-2">
             <div class="img-zoom">
-                <a href="<?php the_permalink(); ?>">
-                    <img src="<?php the_field('image'); ?>" /></a>
+                <?php
+                    $image = get_field('image');
+
+$picture = $image['sizes']['large'];
+$alt = $image['alt'];
+?>
+                <img src="<?php echo $picture;?>" alt="<?php echo esc_attr($alt); ?>" />
             </div>
         </div>
 
@@ -36,11 +42,7 @@ get_header();
 
         </div>
 
-        <?php endif; ?>
-
-        <?php } } ?>
-
-
 
     </div>
+    <?php } } ?>
 </section>

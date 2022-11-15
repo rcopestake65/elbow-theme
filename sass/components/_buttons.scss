@@ -163,12 +163,15 @@ button {
         background-color: $clr-brand-pink;
         color: $clr-white;
         border-radius: 25px;
-        padding: 0.25rem 0.5rem;
+        padding: 0.1rem 0.5rem;
         text-decoration: none;
     }
     @include below(850px) {
         font-size: $fs-16;
     }
+}
+.page-contact .underline {
+    color: $clr-white;
 }
 .underline.left-align {
     padding-left: 0.5rem;
@@ -254,8 +257,10 @@ button {
     display: flex;
     justify-content: space-between;
 }
-.read-more {
+a.read-more {
+    color: $clr-white;
     &:hover {
-        color: $clr-brand-blue;
+        color: $clr-brand-pink;
+        text-decoration: underline;
     }
 }

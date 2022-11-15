@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
-    padding-top: 2rem;
+    padding-top: 8rem;
     @include below(550px) {
         flex-direction: column;
         padding-top: 1rem;
@@ -47,6 +47,7 @@
     }
 }
 .contact-icon-container {
+    justify-content: space-around;
     @include below(600px) {
         flex-direction: column;
     }

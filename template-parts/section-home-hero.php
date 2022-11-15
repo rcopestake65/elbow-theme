@@ -9,7 +9,7 @@
     </div>
     <div class="strapline">
         <p><?php the_field('strapline'); ?>
-            <a class="down-btn" href="#posts"><i class="gg-arrow-long-down"></i></a>
+            <!--<a class="down-btn" href="#posts"><i class="gg-arrow-long-down"></i></a>-->
         </p>
 
     </div>

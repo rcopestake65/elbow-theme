@@ -18,6 +18,10 @@
   padding-top: 0.5rem;
   min-height: 50px;
 }
+/*set cursor to default when hovering on About item*/
+.menu-item-has-children > a {
+  cursor: default;
+}
 .sub-menu {
   display: none;
   @include below(1050px) {
@@ -37,17 +41,22 @@
   top: 75%;
   transform: translateX(-50%);
   width: auto;
-  border-radius: 15px;
-  padding: 0 5px 2px 0;
-  white-space: nowrap;
-  background-color: $clr-brand-pink;
-  color: $clr-brand-blue;
+
   z-index: 100;
   @include below(1050px) {
     position: relative;
     border-radius: 0;
     padding: 0;
     background-color: transparent;
+  }
+}
+.sub-menu li a {
+  border-radius: 15px;
+  padding: 0 5px 2px 0;
+  white-space: nowrap;
+  &:hover {
+    background-color: $clr-brand-pink;
+    color: $clr-brand-blue;
   }
 }
 .logo-gif {

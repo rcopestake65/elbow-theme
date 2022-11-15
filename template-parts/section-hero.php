@@ -2,7 +2,7 @@
     <div>
         <h2><?php the_title();?></h2>
         <p><?php the_field('intro'); ?>
-            <a class="down-btn" href="#content"><i class="gg-arrow-long-down"></i></a>
+            <!--  <a class="down-btn" href="#content"><i class="gg-arrow-long-down"></i></a>-->
         </p>
 
 

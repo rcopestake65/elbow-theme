@@ -20,10 +20,15 @@
             
             $title = get_sub_field('title');
             $text = get_sub_field('text');
+            $examples = get_sub_field('examples')
             ?>
                 <div>
                     <h4><?php echo $title;?></h4>
-                    <?php echo $text;?>
+                    <div class="investors-sector-content">
+                        <p><?php echo $text;?></p>
+                        <p><?php echo $examples;?></p>
+                    </div>
+
                 </div>
                 <?php endwhile;?>
                 <?php endif;?>

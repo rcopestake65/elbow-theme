@@ -11,7 +11,11 @@ get_header();
                 <?php the_post(); ?>
                 <div class="img-zoom">
                     <a href="<?php the_permalink(); ?>">
-                        <img src="<?php the_field('image'); ?>" /></a>
+                        <?php
+                    $image = get_field('image');
+                    $picture = $image['sizes']['medium'];
+                    ?>
+                        <img class="posts-item-image" src="<?php echo $picture;?>" /></a>
                 </div>
 
                 <div class="posts-item-inner-container">
@@ -25,14 +29,15 @@ get_header();
                         <p> <a class="underline left-align" href="<?php echo esc_url( $download ); ?>">Download</a></p>
                         <img src="<?php the_field('logo'); ?>" />
                     </div>
+                    <?php endif; ?>
                 </div>
 
 
-                <?php endif; ?>
+
 
 
             </div>
-            <?php } } ?>
+            <?php }} ?>
         </div>
         <div class="pagination">
             <div class="nav-previous"><?php previous_posts_link( 'Prev' ); ?></div>

@@ -18,6 +18,14 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    .investors-sector-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include above(850px) {
+            min-height: 200px;
+        }
+    }
     h4 {
         font-weight: bold;
         font-size: $fs-20;

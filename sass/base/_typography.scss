@@ -18,6 +18,9 @@
 p {
   padding-bottom: 1rem;
 }
+p.justify {
+  text-align: justify;
+}
 a {
   text-decoration: none;
   transition: 300ms;
@@ -92,6 +95,11 @@ h3 {
     text-transform: none;
   }
 }
+h3.category {
+  color: $clr-brand-pink;
+  font-size: $fs-48;
+  font-weight: bold;
+}
 .capitals {
   text-transform: uppercase;
 }
@@ -104,10 +112,23 @@ h3 {
   text-transform: uppercase;
   margin-top: 0.5rem;
 }
-.linkdin {
-  margin-top: 1rem;
-  text-align: right;
-  @include below(550px) {
-    text-align: left;
+// .linkdin {
+//   margin-top: 1rem;
+//   // text-align: right;
+//   @include below(550px) {
+//     text-align: left;
+//   }
+// }
+.callout {
+  color: $clr-brand-pink;
+  font-size: $fs-36;
+  // max-width: 75%;
+  // padding-left: 2rem;
+  line-height: 1.25;
+}
+a.read-more {
+  color: $clr-white;
+  &:hover {
+    text-decoration: underline;
   }
 }

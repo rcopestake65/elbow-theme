@@ -40,8 +40,8 @@
 
 
     <section class="values">
-        <h3><?php the_field('values_title'); ?></h3>
-        <p><?php the_field('values_text'); ?></p>
+        <!-- <h3><//?php the_field('values_title'); ?></h3> -->
+        <p class="callout"><?php the_field('values_text'); ?></p>
     </section>
 
 
@@ -59,6 +59,47 @@
             </div>
             <div><img src="/wp-content/uploads/02-1.jpg" alt="Elbow Beach, Bermuda"></div>
         </section>
+    </div>
+</div>
+<div class="charitites-outer-container">
+    <div class="container">
+        <h3>Charitable Donations</h3>
+        <div class="charities-grid">
+            <?php if(have_rows('charity')):?>
+            <?php while(have_rows('charity')): the_row();
+            
+            $logo = get_sub_field('logo');
+            $name = get_sub_field('charity_name');
+            $description = get_sub_field('description');
+            $link = get_sub_field('link');
+            if( $link ): 
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+
+            <?php endif; ?>
+
+
+            <div class="charities-grid-item">
+                <?php    
+            if( !empty( $logo ) ): ?>
+                <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+                <?php endif; ?>
+
+                <h3><?php echo $name ?></h3>
+                <p><?php echo $description ?></p>
+                <p> <a href="<?php echo esc_url( $link_url ); ?>"
+                        target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
+                            class="fa fa-solid fa-arrow-right fa-xs"></i></a></p>
+
+            </div>
+
+            <?php endwhile;?>
+            <?php endif;?>
+
+        </div>
+
     </div>
 </div>
 <?php endwhile; else: endif;?>

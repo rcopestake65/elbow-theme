@@ -17,10 +17,14 @@
                 // Loop output goes here ?>
         <div class="post-slide">
             <h4><a href="<?php the_permalink(); ?>"> <?php the_date(); ?></a></h4>
-            <?php the_excerpt(); ?>
+            <p class="justify">
+                <?php the_field('excerpt'); ?>
+            </p>
+
+            <p><a class="underline left-align" href="<?php the_permalink(); ?>">Read more</a></p>
             <?php $download = get_field('download'); 
         if( $download ): ?>
-            <p> <a class="underline left-align" href="<?php echo esc_url( $download ); ?>">Download</a></p>
+            <!-- <p> <a class="underline left-align" href="<?php echo esc_url( $download ); ?>">Download</a></p> -->
             <?php endif; ?>
         </div>
 
@@ -41,8 +45,8 @@
 
 <section class="approach">
     <div class="container">
-        <h3><?php the_field('approach_header'); ?></h3>
-        <p><?php the_field('approach_text'); ?></p>
+        <!-- <h3><?php //the_field('approach_header'); ?></h3> -->
+        <p class="callout"><?php the_field('approach_text'); ?></p>
     </div>
     <!--.container-->
 </section>
@@ -50,22 +54,26 @@
 <!--Companies-->
 <div class="container">
     <section class="companies">
-        <h3>Companies</h3>
+        <h3>Investments</h3>
         <div class="companies-container">
             <div>
                 <p><?php the_field('hc_intro'); ?></p>
-                <a class="pill-btn" href="<?php the_field('link'); ?>">All companies</a>
+                <a class="pill-btn" href="<?php the_field('link'); ?>">All investments</a>
+            </div>
+
+            <div>
+                <a href="<?php the_field('companies_link'); ?>"><i class="gg-arrow-long-right"></i></a>
+            </div>
+            <div>
+                <?php if( get_field('image') ): ?>
+                <a href="<?php the_field('companies_link'); ?>"><img src="<?php the_field('image'); ?>" alt=""></a>
+                <?php endif; ?>
             </div>
             <div>
                 <?php if( get_field('logo') ): ?>
                 <img src="<?php the_field('logo'); ?>" />
                 <?php endif; ?>
-                <a href="<?php the_field('companies_link'); ?>"><i class="gg-arrow-long-right"></i></a>
-            </div>
-            <div>
-                <?php if( get_field('image') ): ?>
-                <img src="<?php the_field('image'); ?>" alt="">
-                <?php endif; ?>
+
             </div>
         </div>
         <!--.companies container-->
