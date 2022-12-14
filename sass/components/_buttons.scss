@@ -264,3 +264,30 @@ a.read-more {
         text-decoration: underline;
     }
 }
+//Mobile only btn for investment page 'rollovers'
+.mobile-btn {
+    display: none;
+    position: absolute;
+    bottom: -8px;
+    right: 3px;
+    z-index: 30;
+    transition: all ease 0.25s;
+    @include below(900px) {
+        display: block;
+    }
+}
+.mobile-btn button {
+    background-color: #cc8f9f;
+    padding: 1.25rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    outline: none;
+    .gg-arrow-long-up {
+        transform: translateX(-4px) translateY(-11px);
+    }
+}
+.rotate {
+    transform: rotate(180deg);
+    bottom: 3px;
+}

@@ -21,27 +21,50 @@ $arr_posts = new WP_Query( $args );
         ?>
         <?php if($arr_posts->have_posts()): while($arr_posts->have_posts()): $arr_posts->the_post();?>
         <div class="companies-page-inner-container">
-            <div class="company">
-                <!--logo-->
+            <div class="sector-logo">
+
                 <?php
                     $logo = get_field('logo');
                     $logoimage = $logo;
-                    $logoalt = get_field('sector');
+                   
                     ?>
                 <?php if(get_field('logo')):?>
-                <img class="logo" src="<?php echo $logo;?>" alt="<?php echo $logoalt;?> logo" />
+                <img src="<?php echo $logo;?>" alt="<?php echo $logoalt;?> logo" />
                 <?php endif; ?>
-                <p class="pt1"> <?php the_field('sector');?></p>
-                <p><a href="<?php the_permalink(); ?>"><i class="gg-arrow-long-right"></i></a>
             </div>
+
+
+
             <div class="company-img">
                 <?php
                     $image = get_field('image');
                     $picture = $image['sizes']['large'];
-                    $alt = $image['alt'];
                 ?>
-                <a href="<?php the_permalink(); ?>"><img src="<?php echo $picture;?>"
-                        alt="<?php echo esc_attr($alt); ?>" /></a>
+                <img class="company-image" src="<?php echo $picture;?>" alt="<?php echo esc_attr($alt); ?>" />
+                <div class="mobile-btn">
+                    <button><i class="gg-arrow-long-up"></i></button>
+                </div>
+                <div class="company-img__overlay">
+                    <div class="description">
+                        <?php if(get_field('logo')):?>
+                        <img class="company-img__overlay-logo" src="<?php echo $logo;?>" />
+                        <?php endif; ?>
+                        <h3 class="description-header"><?php the_field('header'); ?></h3>
+                        <?php the_field('description'); ?>
+                        <?php 
+                    $link = get_field('link');
+                    if( $link ): 
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                        ?>
+                        <p><a class="button" href="<?php echo esc_url( $link_url ); ?>"
+                                target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
+                                    class="fa fa-solid fa-arrow-right fa-xs"></i></a>
+                            <?php endif; ?>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -62,27 +85,50 @@ $arr_posts = new WP_Query( $args );
         ?>
         <?php if($arr_posts->have_posts()): while($arr_posts->have_posts()): $arr_posts->the_post();?>
         <div class="companies-page-inner-container">
-            <div class="company">
+            <div class="sector-logo">
                 <!--logo-->
                 <?php
                     $logo = get_field('logo');
-                    $logoimage = $logo['sizes']['medium'];
-                    $logoalt = $logo['alt'];
+                    $logoimage = $logo;
+                    
                     ?>
                 <?php if(get_field('logo')):?>
-                <img class="logo" src="<?php echo $logoimage;?>" alt="<?php echo esc_attr($logoalt); ?>" />
+                <img src="<?php echo $logoimage;?>" alt="<?php echo esc_attr($logoalt); ?>" />
                 <?php endif; ?>
-                <p class="pt1"> <?php the_field('sector');?></p>
-                <p><a href="<?php the_permalink(); ?>"><i class="gg-arrow-long-right"></i></a>
             </div>
+
+
+
             <div class="company-img">
                 <?php
                     $image = get_field('image');
                     $picture = $image['sizes']['large'];
-                    $alt = $image['alt'];
                 ?>
-                <a href="<?php the_permalink(); ?>"><img src="<?php echo $picture;?>"
-                        alt="<?php echo esc_attr($alt); ?>" /></a>
+                <img class="company-image" src="<?php echo $picture;?>" alt="<?php echo esc_attr($alt); ?>" />
+                <div class="mobile-btn">
+                    <button><i class="gg-arrow-long-up"></i></button>
+                </div>
+                <div class="company-img__overlay">
+                    <div class="description">
+                        <?php if(get_field('logo')):?>
+                        <img class="company-img__overlay-logo" src="<?php echo $logo;?>" />
+                        <?php endif; ?>
+                        <h3 class="description-header"><?php the_field('header'); ?></h3>
+                        <?php the_field('description'); ?>
+                        <?php 
+                    $link = get_field('link');
+                    if( $link ): 
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                        ?>
+                        <p><a class="button" href="<?php echo esc_url( $link_url ); ?>"
+                                target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?><i
+                                    class="fa fa-solid fa-arrow-right fa-xs"></i></a>
+                            <?php endif; ?>
+                    </div>
+
+                </div>
             </div>
         </div>
         <?php endwhile; else: endif;?>

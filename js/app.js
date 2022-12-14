@@ -13,6 +13,21 @@ window.addEventListener("scroll", () => {
   }
 });
 
+//mobile display of overlays on investments page
+const showBtn = document.querySelectorAll(".mobile-btn");
+const overlays = document.querySelectorAll(".company-img__overlay");
+
+showBtn.forEach(function (item) {
+  item.addEventListener("click", show);
+});
+
+function show() {
+  const overlay = this.nextElementSibling;
+  const thisBtn = this;
+  overlay.classList.toggle("show");
+  thisBtn.classList.toggle("rotate");
+}
+
 //logo hover effect
 const frontPage = document.querySelector(".home");
 const logo = document.querySelector(".logo");
