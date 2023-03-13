@@ -7,6 +7,60 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s linear;
+    background-color: $clr-black;
+    border-radius: 5px;
+}
+.close-modal {
+    transition: none;
+    &:hover {
+        background-color: $clr-brand-red;
+    }
+}
+.button {
+    border: none;
+    padding: 0.5rem 1.15rem;
+    display: inline-block;
+    //opacity: 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background-color: $clr-black;
+    border-radius: 5px;
+    i {
+        opacity: 0;
+        transition: all 0.3s linear;
+    }
+    &:hover {
+        color: $clr-white;
+        background-color: $clr-black;
+        scale: 1.05;
+        -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
+        box-shadow: 1px 1px 0px 1px #cc0000;
+        i {
+            opacity: 1;
+            padding-left: 10px;
+        }
+    }
+    &:visited {
+        color: $clr-white;
+    }
+}
+
+//no idea why this one button needs to be set to opacity zero for the gsap to work - nothing else does
+// .hero__overlay__left a.heroBtn {
+//     opacity: 0;
+// }
+.branded {
+    background-color: $clr-brand-red;
+    display: inline-block;
+    &:hover {
+        color: $clr-white;
+        background-color: $clr-black;
+        scale: 1.1;
+        -webkit-box-shadow: 1px 1px 0px 1px #cc0000;
+        box-shadow: 1px 1px 0px 1px #cc0000;
+    }
 }
 .btn-container {
     display: flex;
@@ -21,161 +75,24 @@ button {
         top: 20%;
     }
 }
-.prevBtn,
-.nextBtn {
-    position: relative;
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    padding: 20px;
-    border-radius: 50%;
-    background-color: $clr-brand-blue-light-transparent;
-    i {
-        position: absolute;
-        top: 17px;
-        left: 10px;
-    }
-    &:hover {
-        background-color: $clr-brand-pink;
-        i {
-            color: $clr-brand-blue;
-        }
-    }
+
+//testimonial carousel buttons
+.testimonial-btn-container {
+    background-color: $clr-dark-gray;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    //margin-top: 4rem;
 }
 
-.posts-btn-container {
-    position: absolute;
-    top: -18px;
-    left: 50%;
+.testimonial-prevBtn,
+.testimonial-nextBtn {
+    font-size: $fs-22;
+    background-color: $clr-dark-gray;
 }
-.posts-prevBtn,
-.posts-nextBtn {
-    height: 25px;
-    width: 50px;
-    display: inline-block;
-    position: relative;
-}
-.posts-prevBtn {
-    border-radius: 25px 25px 0 0;
-    background-color: $clr-brand-pink;
-    transform: rotate(-90deg) translateY(15px);
-    i {
-        position: absolute;
-        top: 2px;
-        left: 22px;
-        color: $clr-brand-blue;
-        &:hover {
-            color: $clr-white;
-        }
-    }
-    &:hover {
-        background-color: $clr-brand-pink-dark;
-        i {
-            color: $clr-white;
-        }
-    }
-}
-.posts-nextBtn {
-    border-radius: 25px 25px 0 0;
-    background-color: $clr-white;
-    transform: rotate(90deg) translateY(15px);
-    i {
-        position: absolute;
-        top: 2px;
-        left: 22px;
-        color: $clr-brand-blue;
-    }
-    &:hover {
-        background-color: $clr-brand-pink-dark;
-        i {
-            color: $clr-white;
-        }
-    }
-}
-.biog-btn {
-    background: none;
-    color: $clr-brand-blue-light;
-    font-size: $fs-20;
-    display: block;
-    padding-left: 0;
-    &:hover {
-        color: $clr-white;
-    }
-    @include below(800px) {
-        font-size: $fs-16;
-        padding: 0.5rem 0;
-    }
-}
-.btn-active {
-    color: $clr-white;
-}
-
-//biog btn
-
-.img-link a {
-    display: block;
-    position: relative;
-    background-color: #cc8f9f;
-    padding: 1.25rem;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    outline: none;
-    i {
-        position: absolute;
-        top: 16px;
-        left: 6px;
-        color: #0f2b4d;
-    }
-    &:hover {
-        background-color: $clr-white;
-    }
-}
-//pill btn
-.pill-btn {
-    display: block;
-    width: fit-content;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 15px;
-    outline: 1px solid $clr-brand-pink;
-    color: $clr-white;
-    padding: 5px 1.5rem;
-    margin-top: 2rem;
-    @include below(500px) {
-        margin-left: 2px;
-    }
-    &:hover {
-        background-color: $clr-brand-pink;
-        color: $clr-brand-blue;
-    }
-}
-//underline to pill on hover
-.underline {
-    color: $clr-brand-pink;
-    text-transform: uppercase;
-    // font-size: $fs-18;
-    text-decoration: underline;
-    padding: 0.1rem 0.5rem;
-    line-height: 1.5;
-    &:hover {
-        background-color: $clr-brand-pink;
-        color: $clr-white;
-        border-radius: 25px;
-        padding: 0.1rem 0.5rem;
-        text-decoration: none;
-    }
-    @include below(850px) {
-        font-size: $fs-16;
-    }
-}
-.page-contact .underline {
-    color: $clr-white;
-}
-.underline.left-align {
-    padding-left: 0.5rem;
-    margin-left: -0.5rem;
+.testimonial-prevBtn:hover,
+.testimonial-nextBtn:hover {
+    color: $clr-brand-red;
 }
 //back to top button
 .top-link {
@@ -183,16 +100,22 @@ button {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background: $clr-white;
+    background: $clr-brand-red;
     width: 2rem;
     height: 2rem;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    color: $clr-brand-pink;
+    color: $clr-white;
+    opacity: 0.5;
     animation: bounce 2s ease-in-out infinite;
     visibility: hidden;
     z-index: -100;
+    &:hover {
+        scale: 1.5;
+        color: $clr-white;
+        opacity: 1;
+    }
     @include below($br-small) {
         display: none;
     }
@@ -214,80 +137,4 @@ button {
     100% {
         opacity: 1;
     }
-}
-
-/*hero down btn*/
-.down-btn {
-    display: block;
-    position: relative;
-    margin-top: 1rem;
-    background-color: #cc8f9f;
-    padding: 1.25rem;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    outline: none;
-    color: $clr-brand-blue;
-    animation: bounce 2s ease-in-out infinite;
-    &:hover {
-        background-color: $clr-brand-blue-light;
-    }
-    i {
-        position: absolute;
-        top: 8px;
-        left: 16px;
-        color: #0f2b4d;
-    }
-    &:hover i {
-        color: $clr-white;
-    }
-}
-@keyframes bounce {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-.pagination {
-    display: flex;
-    justify-content: space-between;
-}
-a.read-more {
-    color: $clr-white;
-    &:hover {
-        color: $clr-brand-pink;
-        text-decoration: underline;
-    }
-}
-//Mobile only btn for investment page 'rollovers'
-.mobile-btn {
-    display: none;
-    position: absolute;
-    bottom: -8px;
-    right: 3px;
-    z-index: 30;
-    transition: all ease 0.25s;
-    @include below(900px) {
-        display: block;
-    }
-}
-.mobile-btn button {
-    background-color: #cc8f9f;
-    padding: 1.25rem;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    outline: none;
-    .gg-arrow-long-up {
-        transform: translateX(-4px) translateY(-11px);
-    }
-}
-.rotate {
-    transform: rotate(180deg);
-    bottom: 3px;
 }

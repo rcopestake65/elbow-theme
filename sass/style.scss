@@ -1,9 +1,9 @@
+@use "base/reset";
+@use "base/typography";
+
 @use "abstracts/variables";
 @use "abstracts/animation";
 @use "abstracts/utilities";
-
-@use "base/reset";
-@use "base/typography";
 
 @use "layout/body";
 @use "layout/containers";
@@ -13,18 +13,16 @@
 
 @use "pages/home";
 @use "pages/about";
-@use "pages/approach";
-@use "pages/people";
-@use "pages/error";
-@use "pages/companies";
+@use "pages/portfolio";
 @use "pages/contact";
-@use "pages/companies-individual";
-@use "pages/terms";
-@use "pages/jobs";
-@use "pages/news";
-@use "pages/investments";
+@use "pages/error";
+@use "pages/services";
 
 @use "components/buttons";
 @use "components/sliders";
-@use "components/heroes";
-@use "components/icons";
+@use "components/testimonials";
+@use "components/isotope";
+@use "components/hero";
+@use "components/quote";
+@use "components/modals";
+@use "components/tooltips";

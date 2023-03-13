@@ -2,30 +2,34 @@
 /*
 ///////////////////////////HEADER\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 10;
+    position: relative;
+    //margin-bottom: 3rem;
+}
+@include above(1000px) {
+    .header-container {
+        background-color: $clr-black-transparent-25;
+    }
+}
 .header-container a {
     display: contents;
 }
+.header-container h1 span {
+    opacity: 0;
+}
+.header-container h1 {
+    background-image: url(/wp-content/uploads/logo.png);
+    background-repeat: no-repeat;
+    max-width: 220px;
+}
 .header-container img {
-    max-width: 170px;
+    max-width: 220px;
 }
-.header-rule {
-    border-bottom: 1px solid $clr-white;
-}
-.go-home {
-    position: absolute;
-    top: 20px;
-    left: -10px;
-    width: 50px;
-    height: 50px;
-    z-index: -2;
-    transition: all 0.3s linear;
-}
-.go-home-hover {
-    height: 30px;
-    width: 30px;
-    top: 25px;
-    left: 0;
-    -webkit-box-shadow: -2px -2px 0px 1px hsl(344, 37%, 68%);
-    box-shadow: -2px -2px 0px 1px hsl(344, 37%, 68%);
-    cursor: pointer;
+.logo {
+    opacity: 0;
 }

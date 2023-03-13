@@ -3,108 +3,58 @@
 ///////////////////////////NAVIGATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 */
 
-.menu,
-.sub-menu {
+.menu {
   list-style-type: none;
 }
 
-.menu-container > * {
-  align-self: center;
-  flex-grow: 1;
-}
 .menu {
   display: flex;
   justify-content: flex-end;
-  padding-top: 0.5rem;
-  min-height: 50px;
-}
-/*set cursor to default when hovering on About item*/
-.menu-item-has-children > a {
-  cursor: default;
-}
-.sub-menu {
-  display: none;
-  @include below(1050px) {
-    display: block;
-  }
-}
-.menu-item:hover .sub-menu {
-  display: block;
-}
-.sub-menu {
-  //display: none;
-  height: auto;
-  overflow: hidden;
-  // background: $clr-orange-dark;
-  position: absolute;
-  left: 50%;
-  top: 75%;
-  transform: translateX(-50%);
-  width: auto;
-
-  z-index: 100;
-  @include below(1050px) {
-    position: relative;
-    border-radius: 0;
-    padding: 0;
-    background-color: transparent;
-  }
-}
-.sub-menu li a {
-  border-radius: 15px;
-  padding: 0 5px 2px 0;
-  white-space: nowrap;
-  &:hover {
-    background-color: $clr-brand-pink;
-    color: $clr-brand-blue;
-  }
-}
-.logo-gif {
-  margin-top: -1.2rem;
 }
 
-//menu item li is relative to control the absolute position of the sub menu li
 @include above(900px) {
-  .menu-item:not(:last-of-type) {
-    position: relative;
-    padding-right: 2.5rem;
-  }
   .menu .current_page_item > a {
     color: $clr-white;
-    outline: 2px solid $clr-brand-pink;
-    border-radius: 15px;
+    border-bottom: 2px solid $clr-white;
+    padding-bottom: 5px;
+    cursor: default;
   }
   .menu .current-menu-ancestor .current_page_item > a {
-    color: $clr-dark;
+    color: $clr-black;
   }
 }
-
-.menu-item:hover .sub-menu {
-  display: block;
+.menu li {
+  padding-left: 2rem;
 }
-
 .menu li a {
+  position: relative;
   display: block;
-  padding: 5px 10px 7px 10px;
   line-height: 1;
-  border-radius: 15px;
+  font-size: $fs-18;
+  font-weight: bold;
+  letter-spacing: 1px;
   color: $clr-white;
   text-decoration: none;
-  &:hover {
-    color: $clr-white;
-    outline: 2px solid $clr-brand-pink;
-    border-radius: 15px;
-  }
 }
-.menu li:last-of-type a {
-  &:hover {
-    color: $clr-brand-pink;
-    outline: none;
-  }
+.menu li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: $clr-white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
-.menu .sub-menu li a:hover {
-  color: $clr-brand-blue;
-  outline: none;
+.menu li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+//stop hover underline effect on current page
+.menu li.current_page_item a:hover::after {
+  transform: scaleX(0);
 }
 .toggle-btn-container {
   display: none;
@@ -114,14 +64,13 @@
 .sub-menu-container {
   height: 0;
   overflow: hidden;
-  background-color: $clr-dark;
   transition: all 0.5s ease;
 }
 .mobile-menu-container {
   height: 0px;
   overflow: hidden;
   transition: all 0.5s linear;
-  background-color: $clr-brand-blue-light;
+  background-color: $clr-brand-red;
 }
 .mobile-sub-menu {
   margin-left: 0;
@@ -130,12 +79,12 @@
 
 @include below(1050px) {
   .current-menu-item li a {
-    color: $clr-brand-pink;
+    color: $clr-white;
   }
 
   .mobile-menu {
-    background-color: $clr-brand-blue-light;
-    padding-left: 2rem;
+    // background-color: $clr-white;
+    padding: 2rem 0;
     li {
       padding: 0.25rem 0 0.25rem 1rem;
     }
@@ -143,12 +92,16 @@
       color: $clr-white;
       width: 100%;
       display: inline-block;
+      font-size: $fs-22;
       &:hover {
-        color: $clr-brand-pink;
+        color: $clr-brand-red;
+      }
+      &:active {
+        color: $clr-white;
       }
     }
     li.current-menu-item a {
-      color: $clr-brand-pink;
+      color: $clr-black;
     }
   }
   .toggle-btn-container {
@@ -158,12 +111,9 @@
     position: absolute;
     top: 1.75rem;
     right: 1rem;
-    background-color: $clr-brand-pink;
     transition: all 0.3s linear;
     width: 50px;
-    &:hover {
-      background-color: $clr-brand-blue-light;
-    }
+    background-color: $clr-black;
   }
   .menu {
     display: none;

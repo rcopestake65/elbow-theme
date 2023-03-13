@@ -1,12 +1,12 @@
 <header>
 
     <div class="header-container">
-        <div class="logo" id="logo">
-            <a id="logo" href="<?php echo get_bloginfo('url') . '/'; ?>"><img src="/wp-content/uploads/logo.png"></a>
-            <?php if (!is_front_page()) : echo '<div class="go-home"></div>'; endif;
-                ?>
-        </div>
 
+        <a id="logo" href="<?php echo get_bloginfo('url') . '/'; ?>">
+            <h1 class="logo"><span>Red Ink Creative</span>
+            </h1>
+
+        </a>
         <nav role="navigation">
 
             <?php
@@ -39,11 +39,7 @@ array(
 );
 ?>
 </div>
-
-
-<div class="header-rule"></div>
-<div class="container">
-    <!--back to top btn-->
-    <a href="#" class="scroll-link top-link">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+<!--back to top btn-->
+<a href="#" class="scroll-link top-link">
+    <i class="fas fa-arrow-up"></i>
+</a>

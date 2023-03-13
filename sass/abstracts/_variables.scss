@@ -1,29 +1,34 @@
 //utility colors
 $clr-white: hsl(0, 0%, 100%);
 $clr-gray: hsl(0, 0%, 54%);
+$clr-dark-gray: hsl(0, 0%, 12%);
 $clr-black: hsl(0, 0%, 0%);
 $clr-dark: hsl(0, 0%, 13%);
 $clr-white-transparent: hsla(360, 100%, 100%, 0.3);
-$clr-black-transparent: hsla(0, 0%, 0%, 0.18);
+$clr-white-transparent-50: hsl(0, 0%, 100%, 0.5);
+$clr-black-transparent-50: hsla(0, 0%, 0%, 0.5);
+$clr-black-transparent-25: hsla(0, 0%, 0%, 0.25);
+$clr-black-transparent-80: hsla(0, 0%, 0%, 0.8);
+$clr-black-transparent-90: hsla(0, 0%, 0%, 0.9);
 $clr-warning: hsl(6, 78%, 57%);
 $clr-success: hsl(148, 71%, 47%);
 $clr-form: hsl(349, 35%, 91%);
 
-//branding colors
-
 //branding color variants
-$clr-brand-blue: hsl(213, 68%, 18%);
-$clr-brand-blue-dark: hsl(217, 75%, 12%);
-$clr-brand-blue-light: hsl(224, 24%, 33%);
-$clr-brand-blue-light-transparent: hsl(224, 24%, 33%, 0.5);
-$clr-brand-pink: hsl(344, 37%, 68%);
-$clr-brand-pink-lighter: hsl(344, 50%, 75%);
-$clr-brand-pink-light: hsl(344, 37%, 68%, 0.5);
-$clr-brand-pink-dark: hsl(343, 16%, 43%);
+$clr-brand-red: hsl(0, 100%, 40%);
+
+//extra colors - some from elbow - amend!
+$clr-blue: hsl(228, 100%, 24%);
+$clr-blue-transparent-80: hsl(228, 100%, 24%, 0.8);
+$clr-blue-dark: hsl(217, 75%, 12%);
+$clr-blue-light: hsl(224, 24%, 33%);
+$clr-blue-light-transparent: hsl(224, 24%, 33%, 0.5);
+$clr-yellow: hsl(53, 100%, 50%);
 
 //fonts
-$font-stack: "DINOT", Fallback, sans-serif;
-$font-black: "DINOT-black", Fallback, sans-serif;
+$font-base: "Nunito", sans-serif;
+$font-header: "Anton", sans-serif;
+$font-credits: "Courier Prime", monospace;
 $font-size-base: 1rem;
 
 //font-sizes
@@ -40,7 +45,7 @@ $fs-48: 3rem;
 $fs-60: 3.75rem;
 $fs-85: 5.313rem;
 
-//break points
+//break points and widths
 
 @mixin below($size) {
     @media (max-width: $size) {
@@ -52,6 +57,7 @@ $fs-85: 5.313rem;
         @content;
     }
 }
+$max-width: 1250px;
 $br-small: 400px;
 $br-medium: 800px;
 
